@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Temporary files
+*.swp
+*~
+# Editor files
+.vscode/
+.idea/
+
+# Local data (if any)
+*.log

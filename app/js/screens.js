@@ -136,8 +136,8 @@ const ROUND_CONFIG = {
   2: {
     nameKey: 'round2_name', typeKey: 'round2_type',
     icon: 'family_restroom', color: '#f59e0b',
-    rules: ['r2_rule1','r2_rule2','r2_rule3','r2_rule4'],
-    ruleIcons: ['manage_search','account_balance','cancel','bolt'],
+    rules: ['r2_rule1','r2_rule2','r2_rule3','r2_rule4','r2_rule5','r2_rule6'],
+    ruleIcons: ['sports_mma','person','manage_search','cancel','local_police','account_balance'],
   },
   3: {
     nameKey: 'round3_name', typeKey: 'round3_type',
