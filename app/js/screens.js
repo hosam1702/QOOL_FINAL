@@ -174,7 +174,10 @@ function initRoundIntro(roundNum) {
   if (coinFlipSection) {
     coinFlipSection.style.display = roundNum === 1 ? 'block' : 'none';
     if (roundNum === 1) {
-      document.getElementById('btn-coin-flip').onclick = () => _doFlip();
+      _flipInProgress = false;
+      const coinBtn = document.getElementById('btn-coin-flip');
+      if (coinBtn) coinBtn.disabled = false;
+      coinBtn.onclick = () => _doFlip();
       document.getElementById('flip-result').textContent = '';
     }
   }
@@ -198,7 +201,14 @@ function initRoundIntro(roundNum) {
   document.getElementById('btn-lang-intro').onclick  = () => { i18n.toggleLang(); refreshAllText(); initRoundIntro(roundNum); };
 }
 
+let _flipInProgress = false;
 function _doFlip() {
+  if (_flipInProgress) return;
+  _flipInProgress = true;
+
+  const btn = document.getElementById('btn-coin-flip');
+  if (btn) btn.disabled = true;
+
   Audio.coinFlip();
   const resultEl = document.getElementById('flip-result');
   resultEl.textContent = '🪙 ...';
@@ -213,6 +223,8 @@ function _doFlip() {
       const winner = Math.random() > 0.5 ? GameState.teamA.name : GameState.teamB.name;
       resultEl.textContent = '🎉 ' + winner + ' ' + i18n.t('starts_first');
       resultEl.className = 'flip-result done';
+      _flipInProgress = false;
+      if (btn) btn.disabled = false;
     }
   }, 100);
 }

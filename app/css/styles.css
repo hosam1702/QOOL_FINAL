@@ -63,7 +63,7 @@ html, body {
 }
 
 /* ── Screens ── */
-.screen { display: none; height: 100dvh; flex-direction: column; overflow-y: auto; overflow-x: hidden; }
+.screen { display: none; min-height: 100dvh; height: 100dvh; flex-direction: column; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; }
 .screen.active { display: flex; }
 
 /* ── Host Mode / TV Mode ── */
@@ -337,8 +337,8 @@ body.host-mode-active .secret-answer { color: inherit; text-shadow: none; user-s
 
 /* ── Active team banner ── */
 .active-team-banner {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 16px 18px; border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+  padding: 12px 14px; border-radius: var(--radius);
   background: linear-gradient(135deg, var(--bg-card-2), rgba(29,205,147,0.05));
   border: 1.5px solid var(--clr-primary);
 }
@@ -690,6 +690,20 @@ body.host-mode-active .secret-answer { color: inherit; text-shadow: none; user-s
 @media (max-width: 767px) {
   .gameplay-grid, .feud-gameplay-grid { display: flex; flex-direction: column-reverse; }
   .gameplay-right, .feud-right { margin-bottom: 20px; width: 100%; }
+
+  /* Prevent action buttons from being too cramped on narrow screens */
+  .r1-action-grid { grid-template-columns: 1fr; }
+  .r1-action-grid .btn-attack { grid-column: 1; }
+
+  /* Shrink timer value so banner doesn't overflow */
+  .timer-value { font-size: 2rem; }
+  .active-team-name { font-size: 1.2rem; }
+
+  /* Ensure container-wide doesn't cause horizontal overflow */
+  .container-wide { max-width: 100%; overflow-x: hidden; }
+
+  /* Coin flip section on mobile */
+  .coin-flip-section { padding: 8px 0; }
 }
 
 /* ─────────────────────────────────────────────────────────── */
