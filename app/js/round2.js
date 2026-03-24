@@ -83,8 +83,8 @@ function renderRound2() {
   /* Active highlight */
   const cardA = document.getElementById('r2-card-a');
   const cardB = document.getElementById('r2-card-b');
-  cardA.className = 'score-card team-a-card' + (r2.activeTeam === 'A' && !r2.stealPhase ? ' active-team' : '');
-  cardB.className = 'score-card team-b-card' + (r2.activeTeam === 'B' && !r2.stealPhase ? ' active-team' : '');
+  cardA.className = 'score-card team-a-card r2-strip-team' + (r2.activeTeam === 'A' && !r2.stealPhase ? ' active-team' : '');
+  cardB.className = 'score-card team-b-card r2-strip-team' + (r2.activeTeam === 'B' && !r2.stealPhase ? ' active-team' : '');
 
   /* Strikes */
   renderStrikeDots('r2-strikes-row', r2.strikesActive, 3);
