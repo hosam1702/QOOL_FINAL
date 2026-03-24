@@ -136,8 +136,8 @@ const ROUND_CONFIG = {
   2: {
     nameKey: 'round2_name', typeKey: 'round2_type',
     icon: 'family_restroom', color: '#f59e0b',
-    rules: ['r2_rule1','r2_rule2','r2_rule3','r2_rule4','r2_rule5','r2_rule6'],
-    ruleIcons: ['sports_mma','person','manage_search','cancel','local_police','account_balance'],
+    rules: ['r2_rule1','r2_rule2','r2_rule3','r2_rule4','r2_rule5'],
+    ruleIcons: ['person','manage_search','cancel','local_police','account_balance'],
   },
   3: {
     nameKey: 'round3_name', typeKey: 'round3_type',
@@ -220,7 +220,7 @@ function _doFlip() {
 /* ─────────────────────────────────────────────────────────── */
 /*  SCOREBOARD SCREEN (between rounds)                        */
 /* ─────────────────────────────────────────────────────────── */
-function showScoreboard(completedRound) {
+function showScoreboard(completedRound, skipAnimate = false) {
   Router.go('scoreboard');
   const s      = GameState;
   const rScoreA = s['r' + completedRound].scoreA;
@@ -238,16 +238,21 @@ function showScoreboard(completedRound) {
   const elTotalA = document.getElementById('sb-team-a-total');
   const elTotalB = document.getElementById('sb-team-b-total');
 
-  elRoundA.textContent = '0'; elRoundB.textContent = '0';
-  elTotalA.textContent = '0'; elTotalB.textContent = '0';
-  setTimeout(() => {
-    animateCount(elRoundA, rScoreA, 700);
-    animateCount(elRoundB, rScoreB, 700);
-  }, 200);
-  setTimeout(() => {
-    animateCount(elTotalA, totalA, 900);
-    animateCount(elTotalB, totalB, 900);
-  }, 1100);
+  if (skipAnimate) {
+    elRoundA.textContent = rScoreA; elRoundB.textContent = rScoreB;
+    elTotalA.textContent = totalA;  elTotalB.textContent = totalB;
+  } else {
+    elRoundA.textContent = '0'; elRoundB.textContent = '0';
+    elTotalA.textContent = '0'; elTotalB.textContent = '0';
+    setTimeout(() => {
+      animateCount(elRoundA, rScoreA, 700);
+      animateCount(elRoundB, rScoreB, 700);
+    }, 200);
+    setTimeout(() => {
+      animateCount(elTotalA, totalA, 900);
+      animateCount(elTotalB, totalB, 900);
+    }, 1100);
+  }
 
   // Difference to tie
   const diffEl = document.getElementById('sb-diff-label');
@@ -290,13 +295,13 @@ function showScoreboard(completedRound) {
   }
 
   document.getElementById('btn-theme-sb').onclick = () => Theme.toggle();
-  document.getElementById('btn-lang-sb').onclick  = () => { i18n.toggleLang(); refreshAllText(); showScoreboard(completedRound); };
+  document.getElementById('btn-lang-sb').onclick  = () => { i18n.toggleLang(); refreshAllText(); showScoreboard(completedRound, true); };
 }
 
 /* ─────────────────────────────────────────────────────────── */
 /*  FINAL RESULTS SCREEN                                       */
 /* ─────────────────────────────────────────────────────────── */
-function showFinalResults() {
+function showFinalResults(skipAnimate = false) {
   Router.go('final');
   fireConfetti(100);
   Audio.victory();
@@ -346,9 +351,9 @@ function showFinalResults() {
   if (statsEl) {
     const st = s.stats;
     statsEl.innerHTML = `
-      <div class="stat-row"><span>${i18n.lang === 'ar' ? 'إنذارات الجولة 1' : 'R1 Strikes'}</span><span><b style="color:var(--clr-team-a)">${st.r1StrikesA}</b> — <b style="color:var(--clr-team-b)">${st.r1StrikesB}</b></span></div>
-      <div class="stat-row"><span>${i18n.lang === 'ar' ? 'بنك فاز به (R2)' : 'Bank Earned (R2)'}</span><span><b style="color:var(--clr-team-a)">${st.r2BankWonA}</b> — <b style="color:var(--clr-team-b)">${st.r2BankWonB}</b></span></div>
-      <div class="stat-row"><span>${i18n.lang === 'ar' ? 'سرقات ناجحة' : 'Successful Steals'}</span><span><b style="color:var(--clr-team-a)">${st.stealsSuccessA}</b> — <b style="color:var(--clr-team-b)">${st.stealsSuccessB}</b></span></div>
+      <div class="stat-row"><span>${i18n.t('r1_strikes_label')}</span><span><b style="color:var(--clr-team-a)">${st.r1StrikesA}</b> — <b style="color:var(--clr-team-b)">${st.r1StrikesB}</b></span></div>
+      <div class="stat-row"><span>${i18n.t('r2_bank_won_label')}</span><span><b style="color:var(--clr-team-a)">${st.r2BankWonA}</b> — <b style="color:var(--clr-team-b)">${st.r2BankWonB}</b></span></div>
+      <div class="stat-row"><span>${i18n.t('steals_success_label')}</span><span><b style="color:var(--clr-team-a)">${st.stealsSuccessA}</b> — <b style="color:var(--clr-team-b)">${st.stealsSuccessB}</b></span></div>
     `;
   }
 
@@ -369,7 +374,7 @@ function showFinalResults() {
   };
 
   document.getElementById('btn-theme-final').onclick = () => Theme.toggle();
-  document.getElementById('btn-lang-final').onclick  = () => { i18n.toggleLang(); refreshAllText(); showFinalResults(); };
+  document.getElementById('btn-lang-final').onclick  = () => { i18n.toggleLang(); refreshAllText(); showFinalResults(true); };
 }
 
 /* ─────────────────────────────────────────────────────────── */

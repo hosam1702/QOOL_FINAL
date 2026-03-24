@@ -109,20 +109,32 @@ const Audio = (() => {
     },
 
     siren() {
-      // Alternating tones for clutch mode
-      for (let i = 0; i < 6; i++) {
-        playTone(i % 2 === 0 ? 880 : 660, 'sawtooth', 0.15, 0.3, i * 0.16);
+      // Rapid alternating siren for tension
+      for (let i = 0; i < 8; i++) {
+        playTone(i % 2 === 0 ? 980 : 740, 'sawtooth', 0.12, 0.25, i * 0.12);
       }
     },
 
+    attack() {
+      // Triple burst aggressive "charging" sound
+      playTone(220, 'sawtooth', 0.15, 0.5);
+      playTone(330, 'sawtooth', 0.15, 0.5, 0.15);
+      playTone(440, 'sawtooth', 0.3, 0.6, 0.3);
+    },
+
+    uiClick() {
+      // Very short, high-frequency "tap" for menu/buttons
+      playTone(1800, 'sine', 0.03, 0.1);
+    },
+
     victory() {
-      // Fanfare
-      const notes = [523, 659, 784, 1047];
-      notes.forEach((f, i) => playTone(f, 'sine', 0.35, 0.5, i * 0.18));
+      // Enhanced Fanfare
+      const notes = [523, 659, 784, 1047, 1318];
+      notes.forEach((f, i) => playTone(f, 'sine', 0.4, 0.4, i * 0.15));
       setTimeout(() => {
-        const notes2 = [784, 880, 1047];
-        notes2.forEach((f, i) => playTone(f, 'sine', 0.5, 0.6, i * 0.2));
-      }, 900);
+        const chord = [784, 1047, 1318, 1568];
+        chord.forEach(f => playTone(f, 'sine', 1.0, 0.5));
+      }, 750);
     },
 
     coinFlip() {

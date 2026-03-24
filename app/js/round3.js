@@ -109,15 +109,15 @@ function renderRound3() {
   btnWrongA.onclick  = () => handleR3Wrong('A');
   btnWrongB.onclick  = () => handleR3Wrong('B');
 
-  document.getElementById('btn-end-r3').onclick   = () => confirmEndRound(() => finishRound3());
-  document.getElementById('btn-theme-r3').onclick = () => Theme.toggle();
-  document.getElementById('btn-lang-r3').onclick  = () => { i18n.toggleLang(); refreshAllText(); renderRound3(); };
+  document.getElementById('btn-end-r3').onclick   = () => { Audio.uiClick(); confirmEndRound(() => finishRound3()); };
+  document.getElementById('btn-theme-r3').onclick = () => { Audio.uiClick(); Theme.toggle(); };
+  document.getElementById('btn-lang-r3').onclick  = () => { Audio.uiClick(); i18n.toggleLang(); refreshAllText(); renderRound3(); };
 
   /* ── REFEREE DASHBOARD CONTROLS ── */
-  document.getElementById('r3-btn-score-up-a').onclick = (e) => { e.stopPropagation(); r3.scoreA += r3.pointsPerQ; renderRound3(); };
-  document.getElementById('r3-btn-score-dn-a').onclick = (e) => { e.stopPropagation(); r3.scoreA = Math.max(0, r3.scoreA - r3.pointsPerQ); renderRound3(); };
-  document.getElementById('r3-btn-score-up-b').onclick = (e) => { e.stopPropagation(); r3.scoreB += r3.pointsPerQ; renderRound3(); };
-  document.getElementById('r3-btn-score-dn-b').onclick = (e) => { e.stopPropagation(); r3.scoreB = Math.max(0, r3.scoreB - r3.pointsPerQ); renderRound3(); };
+  document.getElementById('r3-btn-score-up-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r3.scoreA += r3.pointsPerQ; renderRound3(); };
+  document.getElementById('r3-btn-score-dn-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r3.scoreA = Math.max(0, r3.scoreA - r3.pointsPerQ); renderRound3(); };
+  document.getElementById('r3-btn-score-up-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r3.scoreB += r3.pointsPerQ; renderRound3(); };
+  document.getElementById('r3-btn-score-dn-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r3.scoreB = Math.max(0, r3.scoreB - r3.pointsPerQ); renderRound3(); };
   document.getElementById('r3-btn-next-q').onclick = () => { r3.lockedOutTeam = null; r3.questionIndex++; renderRound3(); };
 
   const skipBtnR3 = document.getElementById('r3-btn-skip-q');

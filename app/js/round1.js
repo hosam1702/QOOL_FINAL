@@ -121,10 +121,10 @@ function renderRound1() {
   };
 
   // Score Controls
-  document.getElementById('r1-btn-score-up-a').onclick = (e) => { e.stopPropagation(); r1.scoreA += 10; renderRound1(); };
-  document.getElementById('r1-btn-score-dn-a').onclick = (e) => { e.stopPropagation(); r1.scoreA = Math.max(0, r1.scoreA - 10); renderRound1(); };
-  document.getElementById('r1-btn-score-up-b').onclick = (e) => { e.stopPropagation(); r1.scoreB += 10; renderRound1(); };
-  document.getElementById('r1-btn-score-dn-b').onclick = (e) => { e.stopPropagation(); r1.scoreB = Math.max(0, r1.scoreB - 10); renderRound1(); };
+  document.getElementById('r1-btn-score-up-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r1.scoreA += 10; renderRound1(); };
+  document.getElementById('r1-btn-score-dn-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r1.scoreA = Math.max(0, r1.scoreA - 10); renderRound1(); };
+  document.getElementById('r1-btn-score-up-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r1.scoreB += 10; renderRound1(); };
+  document.getElementById('r1-btn-score-dn-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r1.scoreB = Math.max(0, r1.scoreB - 10); renderRound1(); };
 
   // Strike Undo
   document.getElementById('r1-btn-undo-strike-a').onclick = (e) => { e.stopPropagation(); r1.strikesA = Math.max(0, r1.strikesA - 1); renderRound1(); };
@@ -426,6 +426,7 @@ function handleR1Attack(attackingTeam) {
   if (t === 'B' && r1.attackUsedB) return;
   
   _stopR1Timer();
+  Audio.attack();
   
   if (t === 'A') {
     r1.attackUsedA = true;

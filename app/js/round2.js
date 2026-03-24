@@ -39,18 +39,11 @@ function renderRound2() {
   const bankEl = document.getElementById('r2-bank-value');
   if (bankEl) bankEl.textContent = r2.currentBank;
 
-  /* Face-off phase — no active team yet */
+  /* Face-off phase removed — gameplay board is visible immediately */
   const faceOffSection = document.getElementById('r2-face-off');
   const gameplaySection = document.getElementById('r2-gameplay-section');
-  if (!r2.activeTeam && !r2.stealPhase) {
-    faceOffSection.classList.remove('hidden');
-    gameplaySection.classList.add('hidden');
-    document.getElementById('r2-fo-btn-a').textContent = i18n.t('give_control_a') + ' — ' + s.teamA.name;
-    document.getElementById('r2-fo-btn-b').textContent = i18n.t('give_control_b') + ' — ' + s.teamB.name;
-    document.getElementById('r2-fo-btn-a').onclick = () => { r2.activeTeam = 'A'; renderRound2(); };
-    document.getElementById('r2-fo-btn-b').onclick = () => { r2.activeTeam = 'B'; renderRound2(); };
-    return;
-  }
+  if (faceOffSection) faceOffSection.classList.add('hidden');
+  if (gameplaySection) gameplaySection.classList.remove('hidden');
   
   Audio.startAmbient();
   
@@ -114,7 +107,7 @@ function renderRound2() {
     document.getElementById('r2-btn-strike').textContent = i18n.t('add_strike');
     document.getElementById('r2-btn-strike').onclick     = () => handleR2Strike();
     document.getElementById('r2-btn-next-q').textContent = i18n.t('next_q');
-    document.getElementById('r2-btn-next-q').onclick     = () => nextR2Question();
+    document.getElementById('r2-btn-next-q').onclick     = () => { Audio.uiClick(); nextR2Question(); };
     
     const skipBtnR2 = document.getElementById('r2-btn-skip-q');
     if (skipBtnR2) skipBtnR2.onclick = () => {
@@ -134,13 +127,13 @@ function renderRound2() {
   }
 
   /* ── REFEREE DASHBOARD CONTROLS ── */
-  document.getElementById('r2-btn-score-up-a').onclick = (e) => { e.stopPropagation(); r2.scoreA++; renderRound2(); };
-  document.getElementById('r2-btn-score-dn-a').onclick = (e) => { e.stopPropagation(); r2.scoreA = Math.max(0, r2.scoreA - 1); renderRound2(); };
-  document.getElementById('r2-btn-score-up-b').onclick = (e) => { e.stopPropagation(); r2.scoreB++; renderRound2(); };
-  document.getElementById('r2-btn-score-dn-b').onclick = (e) => { e.stopPropagation(); r2.scoreB = Math.max(0, r2.scoreB - 1); renderRound2(); };
+  document.getElementById('r2-btn-score-up-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r2.scoreA++; renderRound2(); };
+  document.getElementById('r2-btn-score-dn-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r2.scoreA = Math.max(0, r2.scoreA - 1); renderRound2(); };
+  document.getElementById('r2-btn-score-up-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r2.scoreB++; renderRound2(); };
+  document.getElementById('r2-btn-score-dn-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r2.scoreB = Math.max(0, r2.scoreB - 1); renderRound2(); };
   
   const undoStBtn = document.getElementById('r2-btn-undo-strike');
-  if (undoStBtn) undoStBtn.onclick = (e) => { e.stopPropagation(); r2.strikesActive = Math.max(0, r2.strikesActive - 1); renderRound2(); };
+  if (undoStBtn) undoStBtn.onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r2.strikesActive = Math.max(0, r2.strikesActive - 1); renderRound2(); };
 
   // Manual Turn Swap
   document.getElementById('r2-card-a').onclick = () => { r2.activeTeam = 'A'; renderRound2(); };
