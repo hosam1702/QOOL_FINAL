@@ -167,6 +167,8 @@ const TRANSLATIONS = {
     // Misc
     vs: 'ضد',
     referee: 'الحكم',
+    skip_question: 'تخطي / تغيير السؤال',
+    lang_content_note: '🌍 تم تفعيل الترجمة الإنجليزية لجميع الجولات!',
 
     // Timer decision
     time_up: 'انتهى الوقت!',
@@ -241,6 +243,11 @@ const TRANSLATIONS = {
     r2_rule3: 'Strikes ❌: Every wrong answer earns a Strike. Accruing 3 Strikes immediately freezes the board.',
     r2_rule4: 'The Steal 🚨: The opposing team now groups up and consults to give ONE final answer to steal the board.',
     r2_rule5: 'Resolution 🔄: A correct steal gives them the whole Bank. Wrong steal returns it to Team 1. Point values multiply every board (1x, 2x, 3x)!',
+
+    r3_rule1: 'Questions are very fast — every correct answer earns 20 points',
+    r3_rule2: 'Wrong answer? The question passes immediately to the opposing team',
+    r3_rule3: 'Last 3 questions = CLUTCH MODE 🔴 — points are worth 50 each!',
+    r3_rule4: 'Your team can flip the result in the final seconds regardless of the score gap',
 
     active_team: 'Active Team',
     your_turn: 'Your Turn!',
@@ -323,6 +330,8 @@ const TRANSLATIONS = {
 
     vs: 'VS',
     referee: 'Referee',
+    skip_question: 'Skip / Change Question',
+    lang_content_note: '🌍 English translation now available for all rounds!',
 
     // Timer decision
     time_up: "Time's Up!",

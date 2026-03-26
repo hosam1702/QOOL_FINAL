@@ -3,6 +3,7 @@
    ============================================================ */
 
 let _r1Timer = null;
+let _r1TimeLeft = 20; // initialized to R1_TIMER_SECS
 const R1_TIMER_SECS = 20;
 
 function initRound1() {
@@ -62,7 +63,16 @@ function renderRound1() {
   /* Scores & strikes */
   renderR1Scores();
 
-  /* Action buttons */
+  // Editable score for referee
+  makeScoreEditable('r1-score-a',
+    () => GameState.r1.scoreA,
+    (v) => { GameState.r1.scoreA = v; renderRound1(); }
+  );
+  makeScoreEditable('r1-score-b',
+    () => GameState.r1.scoreB,
+    (v) => { GameState.r1.scoreB = v; renderRound1(); }
+  );
+
   const btnValid  = document.getElementById('r1-btn-found');
   const btnStrike = document.getElementById('r1-btn-strike');
   const btnAttack = document.getElementById('r1-btn-attack');
@@ -109,10 +119,20 @@ function renderRound1() {
   document.getElementById('r1-card-b').onclick = () => { if (!r1.suddenDeathTeam) { r1.activeTeam = 'B'; renderRound1(); } };
 
   // Timer Controls
-  document.getElementById('r1-btn-pause-timer').onclick = () => {
+  const pauseBtn = document.getElementById('r1-btn-pause-timer');
+  const timerHint = document.getElementById('r1-timer-hint');
+  if (timerHint) timerHint.style.display = r1.timerPaused && !r1.suddenDeathTeam ? 'block' : 'none';
+  pauseBtn.onclick = () => {
     r1.timerPaused = !r1.timerPaused;
-    if (r1.timerPaused) { _stopR1Timer(); document.getElementById('r1-btn-pause-timer').innerHTML = '<span class="material-symbols-outlined" style="font-size:14px">play_arrow</span>'; }
-    else { _startR1Timer(); document.getElementById('r1-btn-pause-timer').innerHTML = '<span class="material-symbols-outlined" style="font-size:14px">pause</span>'; }
+    if (r1.timerPaused) {
+      _stopR1Timer();
+      pauseBtn.innerHTML = '<span class="material-symbols-outlined" style="font-size:14px">play_arrow</span>';
+      if (timerHint) timerHint.style.display = 'block';
+    } else {
+      _startR1Timer();
+      pauseBtn.innerHTML = '<span class="material-symbols-outlined" style="font-size:14px">pause</span>';
+      if (timerHint) timerHint.style.display = 'none';
+    }
   };
   document.getElementById('r1-btn-reset-timer').onclick = () => {
     _stopR1Timer(); _r1TimeLeft = R1_TIMER_SECS; r1.timerPaused = true;
@@ -187,10 +207,10 @@ function _parseAnswers(q) {
   if (lang === 'ar' && q.answers_ar && q.answers_ar.length) return q.answers_ar;
   if (lang === 'en' && q.answers_en && q.answers_en.length) return q.answers_en;
 
-  // Fall back to parsing the text (both ar & en text are the same in current data)
-  const raw = q.ar || q.en || '';
-  // Match content inside parentheses that contains الإجابة: or Answer:
-  const match = raw.match(/[\(](الإجابة:|Answer:)\s*([^\)]+)[\)]/i);
+  // Fall back to parsing the text — use correct language field
+  const raw = (i18n.lang === 'en' ? (q.en || q.ar) : (q.ar || q.en)) || '';
+  // Match content inside parentheses that contains الإجابة: or Answer: or Ans:
+  const match = raw.match(/[\(](الإجابة:|Answer:|Ans:)\s*([^\)]+)[\)]/i);
   if (match) {
     return match[2]
       .split(/\s*[—\-,،]\s*/)
@@ -247,7 +267,6 @@ function btnFound_setSelected(idx) {
 
 /* ── Adjustable Timer ── */
 function _startR1Timer() {
-  if (typeof _r1TimeLeft === 'undefined') _r1TimeLeft = R1_TIMER_SECS;
   _updateTimerDisplay();
   Audio.startAmbient();
   _r1Timer = setInterval(() => {
@@ -268,8 +287,7 @@ function _startR1Timer() {
   }, 1000);
 }
 function _stopR1Timer() {
-  clearInterval(_r1Timer);
-  _r1Timer = null;
+  if (_r1Timer) { clearInterval(_r1Timer); _r1Timer = null; }
   Audio.stopAmbient();
 }
 
@@ -495,7 +513,7 @@ function handleR1SuddenDeath(correct) {
   if (correct) {
     if (stealingTeam === 'A') { r1.scoreA += 20; GameState.stats.stealsSuccessA++; }
     else { r1.scoreB += 20; GameState.stats.stealsSuccessB++; }
-    Audio.victory ? Audio.correct() : Audio.correct();
+    Audio.victory();
     showToast('🎉 ' + i18n.t('steal_success') + ' (+20)', 'correct', 2500);
   } else {
     // Draw — nobody wins the point

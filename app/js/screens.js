@@ -24,7 +24,8 @@ function initHome() {
   // Resume button: show if there's an active game in progress
   const resumeBtn = document.getElementById('btn-resume-game');
   if (resumeBtn) {
-    const hasActiveGame = GameState.currentRound > 0 && !GameState.r3.done;
+    const hasActiveGame = GameState.currentRound > 0 &&
+      !(GameState.currentRound === 3 && GameState.r3.done);
     resumeBtn.style.display = hasActiveGame ? 'flex' : 'none';
     resumeBtn.onclick = () => {
       if (GameState.currentRound === 1 && !GameState.r1.done) { Router.go('round1'); renderRound1(); }
@@ -34,8 +35,10 @@ function initHome() {
     };
   }
 
-  document.getElementById('btn-theme-home').onclick = () => Theme.toggle();
-  document.getElementById('btn-lang-home').onclick  = () => { i18n.toggleLang(); refreshAllText(); initHome(); };
+  const themeHomeBtn = document.getElementById('btn-theme-home');
+  if (themeHomeBtn) themeHomeBtn.onclick = () => Theme.toggle();
+  const langHomeBtn = document.getElementById('btn-lang-home');
+  if (langHomeBtn) langHomeBtn.onclick = () => { i18n.toggleLang(); refreshAllText(); initHome(); };
 }
 
 /* ─────────────────────────────────────────────────────────── */

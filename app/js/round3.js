@@ -114,11 +114,21 @@ function renderRound3() {
   document.getElementById('btn-lang-r3').onclick  = () => { Audio.uiClick(); i18n.toggleLang(); refreshAllText(); renderRound3(); };
 
   /* ── REFEREE DASHBOARD CONTROLS ── */
-  document.getElementById('r3-btn-score-up-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r3.scoreA += r3.pointsPerQ; renderRound3(); };
-  document.getElementById('r3-btn-score-dn-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r3.scoreA = Math.max(0, r3.scoreA - r3.pointsPerQ); renderRound3(); };
-  document.getElementById('r3-btn-score-up-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r3.scoreB += r3.pointsPerQ; renderRound3(); };
-  document.getElementById('r3-btn-score-dn-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r3.scoreB = Math.max(0, r3.scoreB - r3.pointsPerQ); renderRound3(); };
+  document.getElementById('r3-btn-score-up-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r3.scoreA += 10; renderRound3(); };
+  document.getElementById('r3-btn-score-dn-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r3.scoreA = Math.max(0, r3.scoreA - 10); renderRound3(); };
+  document.getElementById('r3-btn-score-up-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r3.scoreB += 10; renderRound3(); };
+  document.getElementById('r3-btn-score-dn-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r3.scoreB = Math.max(0, r3.scoreB - 10); renderRound3(); };
   document.getElementById('r3-btn-next-q').onclick = () => { r3.lockedOutTeam = null; r3.questionIndex++; renderRound3(); };
+
+  // Editable score for referee
+  makeScoreEditable('r3-score-a',
+    () => GameState.r3.scoreA,
+    (v) => { GameState.r3.scoreA = v; renderRound3(); }
+  );
+  makeScoreEditable('r3-score-b',
+    () => GameState.r3.scoreB,
+    (v) => { GameState.r3.scoreB = v; renderRound3(); }
+  );
 
   const skipBtnR3 = document.getElementById('r3-btn-skip-q');
   if (skipBtnR3) skipBtnR3.onclick = () => {

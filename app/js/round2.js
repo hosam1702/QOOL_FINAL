@@ -5,7 +5,7 @@
 function initRound2() {
   const s = GameState;
   s.resetR2();
-  const allQ = getQuestions('round2', ['general']);
+  const allQ = getQuestions('round2', GameState.categories.length ? GameState.categories : ['general']);
   s.r2.questions = allQ.slice(0, 3);
   if (s.r2.questions.length === 0) {
     showToast(i18n.t('no_questions'), 'wrong');
@@ -46,9 +46,6 @@ function renderRound2() {
   if (gameplaySection) gameplaySection.classList.remove('hidden');
   
   Audio.startAmbient();
-  
-  faceOffSection.classList.add('hidden');
-  gameplaySection.classList.remove('hidden');
 
   /* Build feud board */
   const board = document.getElementById('r2-feud-board');
@@ -127,10 +124,20 @@ function renderRound2() {
   }
 
   /* ── REFEREE DASHBOARD CONTROLS ── */
-  document.getElementById('r2-btn-score-up-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r2.scoreA++; renderRound2(); };
-  document.getElementById('r2-btn-score-dn-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r2.scoreA = Math.max(0, r2.scoreA - 1); renderRound2(); };
-  document.getElementById('r2-btn-score-up-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r2.scoreB++; renderRound2(); };
-  document.getElementById('r2-btn-score-dn-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r2.scoreB = Math.max(0, r2.scoreB - 1); renderRound2(); };
+  document.getElementById('r2-btn-score-up-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r2.scoreA += 10; renderRound2(); };
+  document.getElementById('r2-btn-score-dn-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r2.scoreA = Math.max(0, r2.scoreA - 10); renderRound2(); };
+  document.getElementById('r2-btn-score-up-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r2.scoreB += 10; renderRound2(); };
+  document.getElementById('r2-btn-score-dn-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r2.scoreB = Math.max(0, r2.scoreB - 10); renderRound2(); };
+
+  // Editable score for referee
+  makeScoreEditable('r2-score-a',
+    () => GameState.r2.scoreA,
+    (v) => { GameState.r2.scoreA = v; renderRound2(); }
+  );
+  makeScoreEditable('r2-score-b',
+    () => GameState.r2.scoreB,
+    (v) => { GameState.r2.scoreB = v; renderRound2(); }
+  );
   
   const undoStBtn = document.getElementById('r2-btn-undo-strike');
   if (undoStBtn) undoStBtn.onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r2.strikesActive = Math.max(0, r2.strikesActive - 1); renderRound2(); };

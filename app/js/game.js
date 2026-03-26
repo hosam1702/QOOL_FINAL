@@ -34,6 +34,8 @@ const GameState = {
     doubleAnswerRequired: false,   // Attack mode: next team must answer twice
     doubleAnswerCount: 0,
     suddenDeathTeam: null,         // Which team is in sudden death
+    revealedAnswers: [],           // Answers already revealed this question
+    timerPaused: true,
     done: false,
   },
 
@@ -100,7 +102,7 @@ const GameState = {
     if (data.teamA) this.teamA = data.teamA;
     if (data.teamB) this.teamB = data.teamB;
     if (data.categories) this.categories = data.categories;
-    if (data.currentRound) this.currentRound = data.currentRound;
+    if (data.currentRound !== undefined) this.currentRound = data.currentRound;
     if (data.gameLength) this.gameLength = data.gameLength;
     if (data.r1) this.r1 = data.r1;
     if (data.r2) this.r2 = data.r2;
@@ -190,7 +192,14 @@ const Router = {
   back() {
     if (this.history.length > 0) {
       const prev = this.history.pop();
-      this.go(prev);
+      // Navigate without pushing to history again
+      document.querySelectorAll('.screen.active').forEach(s => {
+        s.classList.remove('active');
+        s.scrollTop = 0;
+      });
+      const target = document.getElementById('screen-' + prev);
+      if (target) { target.classList.add('active'); target.scrollTop = 0; }
+      this.current = prev;
     }
   }
 };
@@ -249,6 +258,62 @@ function animateCount(el, target, duration = 800) {
     el.textContent = Math.round(count < steps ? current : target);
     if (count >= steps) clearInterval(interval);
   }, duration / steps);
+}
+
+/* ─── Editable Score ──────────────────────────────────────── */
+/**
+ * Makes a score display element directly editable by the referee.
+ * Click → an <input> overlay appears → Enter or blur saves the value.
+ * @param {string}   elId    - ID of the score display element
+ * @param {function} getVal  - () => currentValue (number)
+ * @param {function} setVal  - (n) => sets state and re-renders
+ */
+function makeScoreEditable(elId, getVal, setVal) {
+  const el = document.getElementById(elId);
+  if (!el) return;
+
+  // Avoid double-wiring on every render
+  if (el._scoreEditWired) return;
+  el._scoreEditWired = true;
+
+  el.style.cursor = 'text';
+  el.title = i18n.lang === 'ar' ? 'انقر لتعديل النتيجة' : 'Click to edit score';
+
+  el.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (el.querySelector('input')) return; // already open
+
+    const current = getVal();
+    const input = document.createElement('input');
+    input.type = 'number';
+    input.min = '0';
+    input.value = current;
+    input.style.cssText = `
+      width: 90%; max-width: 80px;
+      font-size: inherit; font-weight: inherit; font-family: inherit;
+      text-align: center; background: rgba(255,255,255,0.15);
+      border: 2px solid var(--clr-primary); border-radius: 8px;
+      color: inherit; padding: 2px 4px; outline: none;
+    `;
+
+    el.textContent = '';
+    el.appendChild(input);
+    input.focus();
+    input.select();
+
+    const save = () => {
+      const raw = parseInt(input.value, 10);
+      const val = isNaN(raw) || raw < 0 ? current : raw;
+      el._scoreEditWired = false; // allow re-wire on next render
+      setVal(val);
+    };
+
+    input.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Enter') { ev.preventDefault(); input.blur(); }
+      if (ev.key === 'Escape') { el._scoreEditWired = false; setVal(current); }
+    });
+    input.addEventListener('blur', save);
+  });
 }
 
 /* ─── Theme Manager ───────────────────────────────────────── */
