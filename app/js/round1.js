@@ -16,7 +16,7 @@ function initRound1() {
     showToast(i18n.t('no_questions'), 'wrong');
     Router.go('setup'); return;
   }
-  s.r1.activeTeam = 'A';
+  s.r1.activeTeam = s.coinFlipWinner || 'A';
   renderRound1();
 }
 

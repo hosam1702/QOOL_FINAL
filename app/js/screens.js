@@ -223,7 +223,9 @@ function _doFlip() {
     ticks++;
     if (ticks >= 12) {
       clearInterval(interval);
-      const winner = Math.random() > 0.5 ? GameState.teamA.name : GameState.teamB.name;
+      const isTeamA = Math.random() > 0.5;
+      const winner = isTeamA ? GameState.teamA.name : GameState.teamB.name;
+      GameState.coinFlipWinner = isTeamA ? 'A' : 'B';
       resultEl.textContent = '🎉 ' + winner + ' ' + i18n.t('starts_first');
       resultEl.className = 'flip-result done';
       _flipInProgress = false;

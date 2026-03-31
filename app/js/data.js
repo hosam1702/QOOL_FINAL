@@ -899,7 +899,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي رياضة يمارسها العرب",
-      "en": "سمّي رياضة يمارسها العرب",
+      "en": "Name a sport practiced by Arabs",
       "answers_ar": [
         "كرة القدم",
         "السباحة",
@@ -911,12 +911,12 @@ const QUESTION_DB = {
       ],
       "answers_en": [
         "Football",
-        "السباحة",
-        "التنس",
-        "الجري",
-        "كرة السلة",
-        "الجيم",
-        "ركوب الدراجات"
+        "Swimming",
+        "Tennis",
+        "Running",
+        "Basketball",
+        "Going to gym",
+        "Cycling"
       ],
       "points": [
         40,
@@ -931,7 +931,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً تشتريه من السوبرماركت دائماً",
-      "en": "سمّي شيئاً تشتريه من السوبرماركت دائماً",
+      "en": "Name something you always buy from a supermarket",
       "answers_ar": [
         "خبز",
         "حليب",
@@ -942,13 +942,13 @@ const QUESTION_DB = {
         "ماء"
       ],
       "answers_en": [
-        "خبز",
-        "حليب",
-        "بيض",
-        "أرز",
-        "سكر",
-        "زيت",
-        "ماء"
+        "Bread",
+        "Milk",
+        "Eggs",
+        "Rice",
+        "Sugar",
+        "Oil",
+        "Water"
       ],
       "points": [
         40,
@@ -963,7 +963,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي طعاماً شعبياً عربياً",
-      "en": "سمّي طعاماً شعبياً عربياً",
+      "en": "Name a popular Arab food",
       "answers_ar": [
         "كبسة",
         "مندي",
@@ -974,13 +974,13 @@ const QUESTION_DB = {
         "منسف"
       ],
       "answers_en": [
-        "كبسة",
-        "مندي",
-        "مجبوس",
-        "فول",
-        "كشري",
-        "ملوخية",
-        "منسف"
+        "Kabsa",
+        "Mandi",
+        "Majboos",
+        "Foul",
+        "Koshari",
+        "Molokhia",
+        "Mansaf"
       ],
       "points": [
         40,
@@ -995,7 +995,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً يتمنى الناس امتلاكه",
-      "en": "سمّي شيئاً يتمنى الناس امتلاكه",
+      "en": "Name something people wish to own",
       "answers_ar": [
         "بيت",
         "سيارة",
@@ -1006,13 +1006,13 @@ const QUESTION_DB = {
         "أسرة سعيدة"
       ],
       "answers_en": [
-        "بيت",
-        "سيارة",
-        "مال",
-        "صحة",
-        "وظيفة جيدة",
-        "سفر",
-        "أسرة سعيدة"
+        "House",
+        "Car",
+        "Money",
+        "Health",
+        "Good job",
+        "Travel",
+        "Happy family"
       ],
       "points": [
         40,
@@ -1027,7 +1027,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي فاكهة يأكلها الناس كثيراً في الصيف",
-      "en": "سمّي فاكهة يأكلها الناس كثيراً في الصيف",
+      "en": "Name a fruit people eat a lot in summer",
       "answers_ar": [
         "بطيخ",
         "مانجو",
@@ -1038,13 +1038,13 @@ const QUESTION_DB = {
         "تفاح"
       ],
       "answers_en": [
-        "بطيخ",
-        "مانجو",
-        "عنب",
-        "خوخ",
-        "تين",
-        "رمان",
-        "تفاح"
+        "Watermelon",
+        "Mango",
+        "Grapes",
+        "Peach",
+        "Fig",
+        "Pomegranate",
+        "Apple"
       ],
       "points": [
         40,
@@ -1059,7 +1059,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً يفعله الناس في رمضان",
-      "en": "سمّي شيئاً يفعله الناس في رمضان",
+      "en": "Name something people do in Ramadan",
       "answers_ar": [
         "يصومون",
         "يصلون التراويح",
@@ -1070,13 +1070,13 @@ const QUESTION_DB = {
         "يؤدون العمرة"
       ],
       "answers_en": [
-        "يصومون",
-        "يصلون التراويح",
+        "Fast",
+        "Pray Taraweeh",
         "Give charity",
-        "يجتمعون على الإفطار",
+        "Gather for Iftar",
         "Read the Quran",
         "Do I'tikaf",
-        "يؤدون العمرة"
+        "Perform Umrah"
       ],
       "points": [
         40,
@@ -1091,7 +1091,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي مهنة يحلم بها الأطفال",
-      "en": "سمّي مهنة يحلم بها الأطفال",
+      "en": "Name a profession children dream of",
       "answers_ar": [
         "طبيب",
         "طيار",
@@ -1102,13 +1102,13 @@ const QUESTION_DB = {
         "يوتيوبر"
       ],
       "answers_en": [
-        "طبيب",
-        "طيار",
-        "مهندس",
-        "لاعب كرة",
-        "شرطي",
-        "معلم",
-        "يوتيوبر"
+        "Doctor",
+        "Pilot",
+        "Engineer",
+        "Football player",
+        "Police officer",
+        "Teacher",
+        "YouTuber"
       ],
       "points": [
         40,
@@ -1123,7 +1123,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً تجده في غرفة النوم",
-      "en": "سمّي شيئاً تجده في غرفة النوم",
+      "en": "Name something you find in a bedroom",
       "answers_ar": [
         "سرير",
         "خزانة",
@@ -1134,13 +1134,13 @@ const QUESTION_DB = {
         "ستائر"
       ],
       "answers_en": [
-        "سرير",
-        "خزانة",
-        "مرآة",
-        "تلفاز",
-        "مكيف",
-        "مصباح",
-        "ستائر"
+        "Bed",
+        "Wardrobe",
+        "Mirror",
+        "TV",
+        "AC",
+        "Lamp",
+        "Curtains"
       ],
       "points": [
         40,
@@ -1155,7 +1155,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي سبباً يجعل الناس يضحكون",
-      "en": "سمّي سبباً يجعل الناس يضحكون",
+      "en": "Name a reason people laugh",
       "answers_ar": [
         "نكتة",
         "موقف محرج",
@@ -1166,13 +1166,13 @@ const QUESTION_DB = {
         "تقليد شخص"
       ],
       "answers_en": [
-        "نكتة",
-        "موقف محرج",
-        "فيديو مضحك",
-        "طفل يلعب",
-        "صاحب مضحك",
-        "حيوان يتصرف",
-        "تقليد شخص"
+        "Joke",
+        "Embarrassing moment",
+        "Funny video",
+        "Baby playing",
+        "Funny friend",
+        "Animal behaving funny",
+        "Impersonating someone"
       ],
       "points": [
         40,
@@ -1187,7 +1187,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً يشربه الناس في الصباح",
-      "en": "سمّي شيئاً يشربه الناس في الصباح",
+      "en": "Name something people drink in the morning",
       "answers_ar": [
         "قهوة",
         "شاي",
@@ -1198,13 +1198,13 @@ const QUESTION_DB = {
         "قهوة عربية"
       ],
       "answers_en": [
-        "قهوة",
-        "شاي",
+        "Coffee",
+        "Tea",
         "Juice",
-        "حليب",
-        "ماء",
-        "نسكافيه",
-        "قهوة عربية"
+        "Milk",
+        "Water",
+        "Nescafe",
+        "Arabic coffee"
       ],
       "points": [
         40,
@@ -1219,7 +1219,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً يفعله الناس في عطلة نهاية الأسبوع",
-      "en": "سمّي شيئاً يفعله الناس في عطلة نهاية الأسبوع",
+      "en": "Name something people do on the weekend",
       "answers_ar": [
         "يزورون الأهل",
         "يتسوقون",
@@ -1230,12 +1230,12 @@ const QUESTION_DB = {
         "يمارسون رياضة"
       ],
       "answers_en": [
-        "يزورون الأهل",
-        "يتسوقون",
-        "يخرجون للمطاعم",
-        "يرتاحون",
-        "يتنزهون",
-        "يشاهدون أفلام",
+        "Visit family",
+        "Shop",
+        "Go to restaurants",
+        "Rest",
+        "Go for a walk",
+        "Watch movies",
         "Exercise"
       ],
       "points": [
@@ -1251,7 +1251,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً ينساه الناس في البيت",
-      "en": "سمّي شيئاً ينساه الناس في البيت",
+      "en": "Name something people forget at home",
       "answers_ar": [
         "جوال",
         "مفاتيح",
@@ -1266,9 +1266,9 @@ const QUESTION_DB = {
         "Keys",
         "Wallet",
         "Glasses",
-        "شاحن",
-        "ساعة",
-        "وثائق"
+        "Charger",
+        "Watch",
+        "Documents"
       ],
       "points": [
         40,
@@ -1283,7 +1283,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً يخافه الناس",
-      "en": "سمّي شيئاً يخافه الناس",
+      "en": "Name something people fear",
       "answers_ar": [
         "الموت",
         "الحشرات",
@@ -1294,13 +1294,13 @@ const QUESTION_DB = {
         "الوحدة"
       ],
       "answers_en": [
-        "الموت",
-        "الحشرات",
-        "الظلام",
-        "الأماكن المرتفعة",
-        "الفشل",
-        "المرض",
-        "الوحدة"
+        "Death",
+        "Insects",
+        "Darkness",
+        "Heights",
+        "Failure",
+        "Illness",
+        "Loneliness"
       ],
       "points": [
         40,
@@ -1315,7 +1315,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي هدية شائعة في الأعياد",
-      "en": "سمّي هدية شائعة في الأعياد",
+      "en": "Name a common holiday gift",
       "answers_ar": [
         "نقود",
         "ملابس",
@@ -1326,12 +1326,12 @@ const QUESTION_DB = {
         "شوكولاتة"
       ],
       "answers_en": [
-        "نقود",
+        "Money",
         "Clothes",
-        "عطر",
-        "ساعة",
+        "Perfume",
+        "Watch",
         "Mobile phone",
-        "ذهب",
+        "Gold",
         "Chocolate"
       ],
       "points": [
@@ -1347,7 +1347,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً يفعله الناس عند الفرح",
-      "en": "سمّي شيئاً يفعله الناس عند الفرح",
+      "en": "Name something people do when happy",
       "answers_ar": [
         "يرقصون",
         "يغنون",
@@ -1358,13 +1358,13 @@ const QUESTION_DB = {
         "يوزعون حلوى"
       ],
       "answers_en": [
-        "يرقصون",
-        "يغنون",
-        "يبتسمون",
-        "يبكون من الفرح",
-        "يصورون",
-        "يحتفلون",
-        "يوزعون حلوى"
+        "Dance",
+        "Sing",
+        "Smile",
+        "Cry tears of joy",
+        "Take pictures",
+        "Celebrate",
+        "Distribute sweets"
       ],
       "points": [
         40,
@@ -1379,7 +1379,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً تجده في السيارة",
-      "en": "سمّي شيئاً تجده في السيارة",
+      "en": "Name something you find in a car",
       "answers_ar": [
         "مقاعد",
         "مرآة",
@@ -1390,13 +1390,13 @@ const QUESTION_DB = {
         "طفاية"
       ],
       "answers_en": [
-        "مقاعد",
-        "مرآة",
-        "راديو",
-        "معطر جو",
-        "حزام أمان",
+        "Seats",
+        "Mirror",
+        "Radio",
+        "Air freshener",
+        "Seatbelt",
         "GPS",
-        "طفاية"
+        "Fire extinguisher"
       ],
       "points": [
         40,
@@ -1411,7 +1411,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي نشاطاً يمارسه الناس في البحر",
-      "en": "سمّي نشاطاً يمارسه الناس في البحر",
+      "en": "Name an activity people do at sea",
       "answers_ar": [
         "سباحة",
         "غوص",
@@ -1422,13 +1422,13 @@ const QUESTION_DB = {
         "بناء رمل"
       ],
       "answers_en": [
-        "سباحة",
-        "غوص",
-        "صيد",
-        "ركوب قوارب",
-        "تشميس",
-        "ركوب جت سكي",
-        "بناء رمل"
+        "Swimming",
+        "Diving",
+        "Fishing",
+        "Boating",
+        "Sunbathing",
+        "Jet skiing",
+        "Building sandcastles"
       ],
       "points": [
         40,
@@ -1443,7 +1443,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً يشتريه الناس في رمضان أكثر",
-      "en": "سمّي شيئاً يشتريه الناس في رمضان أكثر",
+      "en": "Name something people buy more in Ramadan",
       "answers_ar": [
         "تمر",
         "عصائر",
@@ -1455,10 +1455,10 @@ const QUESTION_DB = {
       ],
       "answers_en": [
         "Dates",
-        "عصائر",
+        "Juices",
         "Sweets / Candy",
-        "بخور",
-        "فوانيس",
+        "Incense",
+        "Lanterns",
         "Nuts",
         "Qamar al-Din (apricot drink)"
       ],
@@ -1475,7 +1475,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً يفعله الناس عند التوتر",
-      "en": "سمّي شيئاً يفعله الناس عند التوتر",
+      "en": "Name something people do when stressed",
       "answers_ar": [
         "يأكلون",
         "ينامون",
@@ -1486,12 +1486,12 @@ const QUESTION_DB = {
         "يصلون"
       ],
       "answers_en": [
-        "يأكلون",
+        "Eat",
         "Sleep / take a nap",
-        "يمشون",
-        "يتصلون بصديق",
+        "Walk",
+        "Call a friend",
         "Watch TV",
-        "يتصفحون جوال",
+        "Browse phone",
         "Pray"
       ],
       "points": [
@@ -1507,7 +1507,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي تطبيقاً يستخدمه الناس يومياً",
-      "en": "سمّي تطبيقاً يستخدمه الناس يومياً",
+      "en": "Name an app people use daily",
       "answers_ar": [
         "واتساب",
         "إنستغرام",
@@ -1518,13 +1518,13 @@ const QUESTION_DB = {
         "جوجل"
       ],
       "answers_en": [
-        "واتساب",
-        "إنستغرام",
-        "يوتيوب",
-        "تيك توك",
-        "تويتر",
-        "سناب شات",
-        "جوجل"
+        "WhatsApp",
+        "Instagram",
+        "YouTube",
+        "TikTok",
+        "Twitter / X",
+        "Snapchat",
+        "Google"
       ],
       "points": [
         40,
@@ -1539,7 +1539,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً تفعله الأمهات كل يوم",
-      "en": "سمّي شيئاً تفعله الأمهات كل يوم",
+      "en": "Name something mothers do every day",
       "answers_ar": [
         "تطبخ",
         "تنظف",
@@ -1550,13 +1550,13 @@ const QUESTION_DB = {
         "تسقي النباتات"
       ],
       "answers_en": [
-        "تطبخ",
-        "تنظف",
-        "تغسل ملابس",
-        "تأخذ الأطفال للمدرسة",
-        "تسوق",
-        "تدعو لأولادها",
-        "تسقي النباتات"
+        "Cook",
+        "Clean",
+        "Wash clothes",
+        "Take kids to school",
+        "Shop",
+        "Pray for her kids",
+        "Water plants"
       ],
       "points": [
         40,
@@ -1571,7 +1571,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي مكاناً يجتمع فيه العائلة",
-      "en": "سمّي مكاناً يجتمع فيه العائلة",
+      "en": "Name a place the family gathers",
       "answers_ar": [
         "غرفة المعيشة",
         "المطبخ",
@@ -1582,12 +1582,12 @@ const QUESTION_DB = {
         "الاستراحة"
       ],
       "answers_en": [
-        "غرفة المعيشة",
-        "المطبخ",
-        "المسجد",
-        "حديقة المنزل",
-        "غرفة الطعام",
-        "السطح",
+        "Living room",
+        "Kitchen",
+        "Mosque",
+        "Garden",
+        "Dining room",
+        "Roof",
         "A chalet / resort"
       ],
       "points": [
@@ -1603,7 +1603,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً يفعله الناس في الحفلات",
-      "en": "سمّي شيئاً يفعله الناس في الحفلات",
+      "en": "Name something people do at parties",
       "answers_ar": [
         "يأكلون",
         "يرقصون",
@@ -1614,13 +1614,13 @@ const QUESTION_DB = {
         "يشربون عصير"
       ],
       "answers_en": [
-        "يأكلون",
-        "يرقصون",
-        "يلتقطون صور",
-        "يتحدثون",
-        "يغنون",
-        "يلعبون ألعاب",
-        "يشربون عصير"
+        "Eat",
+        "Dance",
+        "Take photos",
+        "Talk",
+        "Sing",
+        "Play games",
+        "Drink juice"
       ],
       "points": [
         40,
@@ -1635,7 +1635,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً تشتريه كهدية للأم",
-      "en": "سمّي شيئاً تشتريه كهدية للأم",
+      "en": "Name a gift you buy for mother",
       "answers_ar": [
         "عطر",
         "ملابس",
@@ -1646,12 +1646,12 @@ const QUESTION_DB = {
         "شوكولاتة"
       ],
       "answers_en": [
-        "عطر",
+        "Perfume",
         "Clothes",
-        "ذهب",
-        "زهور",
-        "حقيبة",
-        "ساعة",
+        "Gold",
+        "Flowers",
+        "Bag",
+        "Watch",
         "Chocolate"
       ],
       "points": [
@@ -1667,7 +1667,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي وقتاً يكون فيه الناس سعداء",
-      "en": "سمّي وقتاً يكون فيه الناس سعداء",
+      "en": "Name a time people are happy",
       "answers_ar": [
         "العيد",
         "الإجازة",
@@ -1678,13 +1678,13 @@ const QUESTION_DB = {
         "لمة الأهل"
       ],
       "answers_en": [
-        "العيد",
-        "الإجازة",
-        "الزواج",
-        "الترقية في العمل",
-        "ولادة طفل",
-        "التخرج",
-        "لمة الأهل"
+        "Eid",
+        "Vacation",
+        "Wedding",
+        "Job promotion",
+        "Birth of a child",
+        "Graduation",
+        "Family gathering"
       ],
       "points": [
         40,
@@ -1808,11 +1808,11 @@ const QUESTION_DB = {
       "answers_en": [
         "Sadness",
         "A touching film",
-        "فراق شخص عزيز",
+        "Losing a loved one",
         "Overwhelming joy",
-        "الوجع",
-        "أخبار حزينة",
-        "ذكريات"
+        "Pain",
+        "Sad news",
+        "Memories"
       ],
       "points": [
         40,
@@ -1827,7 +1827,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً يحبه الرجال",
-      "en": "سمّي شيئاً يحبه الرجال",
+      "en": "Name something men love",
       "answers_ar": [
         "كرة القدم",
         "السيارات",
@@ -1839,12 +1839,12 @@ const QUESTION_DB = {
       ],
       "answers_en": [
         "Football",
-        "السيارات",
-        "الأكل",
-        "النوم",
-        "الصيد",
-        "التكنولوجيا",
-        "السفر"
+        "Cars",
+        "Food",
+        "Sleeping",
+        "Hunting / Fishing",
+        "Technology",
+        "Travel"
       ],
       "points": [
         40,
@@ -1859,7 +1859,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً تفعله قبل السفر",
-      "en": "سمّي شيئاً تفعله قبل السفر",
+      "en": "Name something you do before traveling",
       "answers_ar": [
         "تحزم حقيبتك",
         "تحجز الفندق",
@@ -1870,13 +1870,13 @@ const QUESTION_DB = {
         "تراجع جواز السفر"
       ],
       "answers_en": [
-        "تحزم حقيبتك",
-        "تحجز الفندق",
-        "تودع أهلك",
-        "تشتري هدايا",
-        "تصرف نقود",
-        "تشتري ملابس",
-        "تراجع جواز السفر"
+        "Pack your bag",
+        "Book hotel",
+        "Say goodbye to family",
+        "Buy gifts",
+        "Exchange money",
+        "Buy clothes",
+        "Check passport"
       ],
       "points": [
         40,
@@ -1891,7 +1891,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً يحبه الأطفال",
-      "en": "سمّي شيئاً يحبه الأطفال",
+      "en": "Name something children love",
       "answers_ar": [
         "الحلوى",
         "اللعب",
@@ -1902,13 +1902,13 @@ const QUESTION_DB = {
         "الألعاب الإلكترونية"
       ],
       "answers_en": [
-        "الحلوى",
-        "اللعب",
-        "الكارتون",
-        "الرحلات",
-        "الآيس كريم",
-        "العيدية",
-        "الألعاب الإلكترونية"
+        "Sweets",
+        "Playing",
+        "Cartoons",
+        "Trips",
+        "Ice cream",
+        "Eidiya",
+        "Video games"
       ],
       "points": [
         40,
@@ -1923,7 +1923,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً تشعر به في الشتاء",
-      "en": "سمّي شيئاً تشعر به في الشتاء",
+      "en": "Name something you feel in winter",
       "answers_ar": [
         "برد",
         "نعاس",
@@ -1934,13 +1934,13 @@ const QUESTION_DB = {
         "رغبة في التغطي"
       ],
       "answers_en": [
-        "برد",
-        "نعاس",
-        "رغبة في الأكل",
-        "دفء عند المدفأة",
-        "رغبة في الشاي",
-        "كسل",
-        "رغبة في التغطي"
+        "Cold",
+        "Sleepiness",
+        "Desire to eat",
+        "Warmth by the heater",
+        "Craving tea",
+        "Laziness",
+        "Desire to bundle up"
       ],
       "points": [
         40,
@@ -1955,7 +1955,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً تفعله في يوم المطر",
-      "en": "سمّي شيئاً تفعله في يوم المطر",
+      "en": "Name something you do on a rainy day",
       "answers_ar": [
         "تبقى في البيت",
         "تشرب شاياً",
@@ -1966,13 +1966,13 @@ const QUESTION_DB = {
         "تجلس مع العائلة"
       ],
       "answers_en": [
-        "تبقى في البيت",
-        "تشرب شاياً",
-        "تنام",
-        "تشاهد أفلام",
-        "تطبخ",
-        "تقرأ",
-        "تجلس مع العائلة"
+        "Stay at home",
+        "Drink tea",
+        "Sleep",
+        "Watch movies",
+        "Cook",
+        "Read",
+        "Sit with family"
       ],
       "points": [
         40,
@@ -1987,7 +1987,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً يأكله الناس في الأفراح",
-      "en": "سمّي شيئاً يأكله الناس في الأفراح",
+      "en": "Name something people eat at weddings",
       "answers_ar": [
         "أرز ولحم",
         "حلوى",
@@ -1998,13 +1998,13 @@ const QUESTION_DB = {
         "جريش"
       ],
       "answers_en": [
-        "أرز ولحم",
+        "Meat and rice",
         "Sweets / candy",
         "Cake",
-        "مندي",
-        "مشاوي",
-        "سمك",
-        "جريش"
+        "Mandi",
+        "BBQ",
+        "Fish",
+        "Jareesh"
       ],
       "points": [
         40,
@@ -2019,7 +2019,7 @@ const QUESTION_DB = {
     {
       "category": "general",
       "ar": "سمّي شيئاً تفعله عند المرض",
-      "en": "سمّي شيئاً تفعله عند المرض",
+      "en": "Name something you do when sick",
       "answers_ar": [
         "تنام",
         "تأخذ دواء",
@@ -2030,13 +2030,13 @@ const QUESTION_DB = {
         "تطلب مساعدة"
       ],
       "answers_en": [
-        "تنام",
-        "تأخذ دواء",
-        "تشرب ماء دافئ",
-        "تذهب للطبيب",
-        "تشرب عسل",
-        "تلزم الفراش",
-        "تطلب مساعدة"
+        "Sleep",
+        "Take medicine",
+        "Drink warm water",
+        "Go to the doctor",
+        "Drink honey",
+        "Stay in bed",
+        "Ask for help"
       ],
       "points": [
         40,
@@ -2257,10 +2257,10 @@ const QUESTION_DB = {
         "Rain",
         "Warm tea",
         "Gathering with family",
-        "الكامبينج",
-        "الملابس الثقيلة",
-        "الحساء",
-        "النوم الزيادة"
+        "Camping",
+        "Heavy clothes",
+        "Soup",
+        "Extra sleep"
       ],
       "points": [
         40,
@@ -3096,8 +3096,6 @@ const QUESTION_DB = {
     }
   ]
 };
-
-
 
 function getQuestions(roundName, categories) {
   let all = QUESTION_DB[roundName] || [];

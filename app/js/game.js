@@ -85,6 +85,7 @@ const GameState = {
     this.resetR2();
     this.resetR3();
     this.stats = { r1StrikesA:0, r1StrikesB:0, r2BankWonA:0, r2BankWonB:0, stealsAttemptedA:0, stealsAttemptedB:0, stealsSuccessA:0, stealsSuccessB:0 };
+    this.coinFlipWinner = null;
   },
 
   resetR1() {

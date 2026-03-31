@@ -219,18 +219,20 @@ function handleSteal(correct) {
   // Guard against double calling
   if (!r2.stealTeam) return;
 
+  const currentStealTeam = r2.stealTeam;
+
   // Track stats
-  if (r2.stealTeam === 'A') GameState.stats.stealsAttemptedA++;
+  if (currentStealTeam === 'A') GameState.stats.stealsAttemptedA++;
   else GameState.stats.stealsAttemptedB++;
 
   // Award logic
   if (correct) {
-    if (r2.stealTeam === 'A') GameState.stats.stealsSuccessA++;
+    if (currentStealTeam === 'A') GameState.stats.stealsSuccessA++;
     else GameState.stats.stealsSuccessB++;
     showToast('✅ ' + i18n.t('steal_correct'), 'correct', 2000);
-    setTimeout(() => _awardBank(r2.stealTeam), 1000);
+    setTimeout(() => _awardBank(currentStealTeam), 1000);
   } else {
-    const originalTeam = r2.stealTeam === 'A' ? 'B' : 'A';
+    const originalTeam = currentStealTeam === 'A' ? 'B' : 'A';
     showToast('✗ ' + i18n.t('steal_wrong'), 'wrong', 2000);
     setTimeout(() => _awardBank(originalTeam), 1000);
   }
