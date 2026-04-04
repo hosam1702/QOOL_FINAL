@@ -2780,11 +2780,6 @@
       "en": "What is the capital of Denmark?\n(Ans: Copenhagen)"
     },
     {
-      "category": "geography",
-      "ar": "المجموع: 30 سؤالاً وجواباً ✅",
-      "en": "Total: 30 Questions & Answers"
-    },
-    {
       "category": "islamic",
       "ar": "من هو أبو البشر؟\n(الإجابة: سيدنا آدم عليه السلام)",
       "en": "Who is the father of all mankind?\n(Ans: Prophet Adam, peace be upon him)"
@@ -2933,11 +2928,6 @@
       "category": "islamic",
       "ar": "كم أخاً كان ليوسف؟\n(الإجابة: 11 أخاً)",
       "en": "How many brothers did Prophet Joseph (Yusuf) have?\n(Ans: 11 brothers)"
-    },
-    {
-      "category": "islamic",
-      "ar": "المجموع: 30 سؤالاً وجواباً ✅",
-      "en": "Total: 30 Questions & Answers"
     },
     {
       "category": "history",
@@ -3090,9 +3080,154 @@
       "en": "Which commander is the Strait of Gibraltar named after?\n(Ans: Tariq ibn Ziyad)"
     },
     {
-      "category": "history",
-      "ar": "المجموع: 30 سؤالاً وجواباً ✅",
-      "en": "Total: 30 Questions & Answers"
+      "category": "general",
+      "ar": "ما هي عاصمة قطر؟\n(الإجابة: الدوحة)",
+      "en": "What is the capital of Qatar?\n(Ans: Doha)"
+    },
+    {
+      "category": "general",
+      "ar": "ما هو أطول نهر في العالم؟\n(الإجابة: نهر النيل)",
+      "en": "Which river is the longest in the world?\n(Ans: The Nile)"
+    },
+    {
+      "category": "general",
+      "ar": "كم عدد القارات على الأرض؟\n(الإجابة: ٧)",
+      "en": "How many continents are there on Earth?\n(Ans: 7)"
+    },
+    {
+      "category": "general",
+      "ar": "ما هو أكبر محيط في العالم؟\n(الإجابة: المحيط الهادئ)",
+      "en": "What is the largest ocean in the world?\n(Ans: The Pacific Ocean)"
+    },
+    {
+      "category": "general",
+      "ar": "أي دولة تمتلك أكبر احتياطيات نفطية في الشرق الأوسط؟\n(الإجابة: المملكة العربية السعودية)",
+      "en": "Which country has the largest oil reserves in the Middle East?\n(Ans: Saudi Arabia)"
+    },
+    {
+      "category": "general",
+      "ar": "ما هي اللغة الرسمية للإمارات العربية المتحدة؟\n(الإجابة: العربية)",
+      "en": "What is the official language of the United Arab Emirates?\n(Ans: Arabic)"
+    },
+    {
+      "category": "general",
+      "ar": "كم عدد الكواكب في نظامنا الشمسي؟\n(الإجابة: ٨)",
+      "en": "How many planets are in our solar system?\n(Ans: 8)"
+    },
+    {
+      "category": "general",
+      "ar": "ما هو الرمز الكيميائي للماء؟\n(الإجابة: H₂O)",
+      "en": "What is the chemical symbol for water?\n(Ans: H₂O)"
+    },
+    {
+      "category": "general",
+      "ar": "من رسم لوحة الموناليزا؟\n(الإجابة: ليوناردو دا فينشي)",
+      "en": "Who painted the Mona Lisa?\n(Ans: Leonardo da Vinci)"
+    },
+    {
+      "category": "general",
+      "ar": "ما هو أطول مبنى في العالم؟\n(الإجابة: برج خليفة (دبي))",
+      "en": "What is the tallest building in the world?\n(Ans: Burj Khalifa (Dubai))"
+    },
+    {
+      "category": "general",
+      "ar": "في أي عام انتهت الحرب العالمية الثانية؟\n(الإجابة: ١٩٤٥)",
+      "en": "In which year did World War II end?\n(Ans: 1945)"
+    },
+    {
+      "category": "general",
+      "ar": "ما هي أصغر دولة في العالم؟\n(الإجابة: مدينة الفاتيكان)",
+      "en": "What is the smallest country in the world?\n(Ans: Vatican City)"
+    },
+    {
+      "category": "general",
+      "ar": "أي غاز تمتصه النباتات من الغلاف الجوي؟\n(الإجابة: ثاني أكسيد الكربون (CO₂))",
+      "en": "Which gas do plants absorb from the atmosphere?\n(Ans: Carbon dioxide (CO₂))"
+    },
+    {
+      "category": "general",
+      "ar": "ما الرياضة التي تُلعب في بطولة ويمبلدون؟\n(الإجابة: التنس)",
+      "en": "What sport is played at Wimbledon?\n(Ans: Tennis)"
+    },
+    {
+      "category": "general",
+      "ar": "أي دولة استضافت كأس العالم FIFA 2022؟\n(الإجابة: قطر)",
+      "en": "Which country hosted the 2022 FIFA World Cup?\n(Ans: Qatar)"
+    },
+    {
+      "category": "general",
+      "ar": "ما هي عملة مصر؟\n(الإجابة: الجنيه المصري)",
+      "en": "What is the currency of Egypt?\n(Ans: Egyptian Pound)"
+    },
+    {
+      "category": "general",
+      "ar": "أي عجائب الدنيا القديمة كانت في الإسكندرية بمصر؟\n(الإجابة: منارة الإسكندرية)",
+      "en": "Which ancient wonder was located in Alexandria, Egypt?\n(Ans: The Lighthouse of Alexandria)"
+    },
+    {
+      "category": "general",
+      "ar": "ما هي سرعة الضوء (تقريباً)؟\n(الإجابة: ٣٠٠٬٠٠٠ كم/ث)",
+      "en": "What is the speed of light (approx.)?\n(Ans: 300,000 km/s)"
+    },
+    {
+      "category": "general",
+      "ar": "كم عدد العظام في جسم الإنسان البالغ؟\n(الإجابة: ٢٠٦)",
+      "en": "How many bones are in the adult human body?\n(Ans: 206)"
+    },
+    {
+      "category": "general",
+      "ar": "أي دولة تضم مدينة البتراء الأثرية؟\n(الإجابة: الأردن)",
+      "en": "Which country is home to the ancient city of Petra?\n(Ans: Jordan)"
+    },
+    {
+      "category": "general",
+      "ar": "ماذا يرمز اختصار DNA؟\n(الإجابة: حمض الديوكسيريبوز النووي)",
+      "en": "What does DNA stand for?\n(Ans: Deoxyribonucleic Acid)"
+    },
+    {
+      "category": "general",
+      "ar": "في أي عام تأسست الأمم المتحدة؟\n(الإجابة: ١٩٤٥)",
+      "en": "In which year was the United Nations founded?\n(Ans: 1945)"
+    },
+    {
+      "category": "general",
+      "ar": "أي إمبراطورية كانت تُحكم من القسطنطينية؟\n(الإجابة: الإمبراطورية البيزنطية (العثمانية))",
+      "en": "Which empire was ruled from Constantinople?\n(Ans: The Byzantine (Ottoman) Empire)"
+    },
+    {
+      "category": "general",
+      "ar": "ما هو أكبر صحراء في العالم؟\n(الإجابة: القطب الجنوبي (صحراء باردة))",
+      "en": "What is the largest desert in the world?\n(Ans: Antarctica (cold desert))"
+    },
+    {
+      "category": "general",
+      "ar": "أي عنصر له العدد الذري ٧٩؟\n(الإجابة: الذهب (Au))",
+      "en": "Which element has the atomic number 79?\n(Ans: Gold (Au))"
+    },
+    {
+      "category": "general",
+      "ar": "أي دولة تمتلك أكبر عدد من الأهرامات في العالم؟\n(الإجابة: السودان)",
+      "en": "Which country has the most pyramids in the world?\n(Ans: Sudan)"
+    },
+    {
+      "category": "general",
+      "ar": "ما اسم المضيق الذي يفصل بين أوروبا وأفريقيا؟\n(الإجابة: مضيق جبل طارق)",
+      "en": "What is the name of the strait separating Europe and Africa?\n(Ans: Strait of Gibraltar)"
+    },
+    {
+      "category": "general",
+      "ar": "من كتب روميو وجولييت؟\n(الإجابة: وليام شكسبير)",
+      "en": "Who wrote Romeo and Juliet?\n(Ans: William Shakespeare)"
+    },
+    {
+      "category": "general",
+      "ar": "ما هي اللغة الأكثر تحدثاً في العالم؟\n(الإجابة: الماندرين الصينية)",
+      "en": "What is the most spoken language in the world?\n(Ans: Mandarin Chinese)"
+    },
+    {
+      "category": "general",
+      "ar": "أي دولة عربية كانت أول من منح المرأة حق التصويت؟\n(الإجابة: سوريا (١٩٤٩))",
+      "en": "Which Arab country was the first to grant women the right to vote?\n(Ans: Syria (1949))"
     }
   ]
 }

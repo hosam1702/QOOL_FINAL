@@ -141,10 +141,10 @@ function renderRound1() {
   };
 
   // Score Controls
-  document.getElementById('r1-btn-score-up-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r1.scoreA += 10; renderRound1(); };
-  document.getElementById('r1-btn-score-dn-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r1.scoreA = Math.max(0, r1.scoreA - 10); renderRound1(); };
-  document.getElementById('r1-btn-score-up-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r1.scoreB += 10; renderRound1(); };
-  document.getElementById('r1-btn-score-dn-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r1.scoreB = Math.max(0, r1.scoreB - 10); renderRound1(); };
+  document.getElementById('r1-btn-score-up-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r1.scoreA += 50; renderRound1(); };
+  document.getElementById('r1-btn-score-dn-a').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r1.scoreA = Math.max(0, r1.scoreA - 50); renderRound1(); };
+  document.getElementById('r1-btn-score-up-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r1.scoreB += 50; renderRound1(); };
+  document.getElementById('r1-btn-score-dn-b').onclick = (e) => { e.stopPropagation(); Audio.uiClick(); r1.scoreB = Math.max(0, r1.scoreB - 50); renderRound1(); };
 
   // Strike Undo
   document.getElementById('r1-btn-undo-strike-a').onclick = (e) => { e.stopPropagation(); r1.strikesA = Math.max(0, r1.strikesA - 1); renderRound1(); };
@@ -167,7 +167,7 @@ function renderRound1() {
       GameState.r1.timerPaused = true;
       renderRound1();
     } else {
-      showToast('⚠️ لا يوجد أسئلة إضافية في هذا القسم', 'wrong', 2000);
+      showToast('⚠️ ' + (i18n.t('no_questions') || 'لا يوجد أسئلة إضافية'), 'wrong', 2000);
     }
   };
 
@@ -177,20 +177,8 @@ function renderRound1() {
     Audio.correct();
     _stopR1Timer();
     
-    // Double-answer mode tracking
-    if (r1.doubleAnswerRequired) {
-      r1.doubleAnswerCount++;
-      if (r1.doubleAnswerCount >= 2) {
-        r1.doubleAnswerRequired = false;
-        r1.doubleAnswerCount = 0;
-        // Switch turn back to the team that used the attack
-        r1.activeTeam = r1.activeTeam === 'A' ? 'B' : 'A';
-      }
-      // If only 1 of 2 answered, stay on same team
-    } else {
-      // Normal: switch turn
-      r1.activeTeam = r1.activeTeam === 'A' ? 'B' : 'A';
-    }
+    // Double-answer mode tracking & active team switch
+    _advanceTurn(r1);
 
     _r1TimeLeft = R1_TIMER_SECS;
     r1.timerPaused = true;
@@ -267,6 +255,7 @@ function btnFound_setSelected(idx) {
 
 /* ── Adjustable Timer ── */
 function _startR1Timer() {
+  if (_r1Timer) return;
   _updateTimerDisplay();
   Audio.startAmbient();
   _r1Timer = setInterval(() => {
@@ -373,20 +362,8 @@ function handleR1AnswerFound(idx) {
   Audio.correct();
   showToast('✅ ' + i18n.t('answer_found'), 'correct', 1000);
 
-  // Double-answer mode tracking
-  if (r1.doubleAnswerRequired) {
-    r1.doubleAnswerCount++;
-    if (r1.doubleAnswerCount >= 2) {
-      r1.doubleAnswerRequired = false;
-      r1.doubleAnswerCount = 0;
-      // Switch turn back to the team that used the attack
-      r1.activeTeam = r1.activeTeam === 'A' ? 'B' : 'A';
-    }
-    // If only 1 of 2 answered, stay on same team
-  } else {
-    // Normal: switch turn
-    r1.activeTeam = r1.activeTeam === 'A' ? 'B' : 'A';
-  }
+  // Double-answer mode tracking & active team switch
+  _advanceTurn(r1);
 
   // Check if all answers found — resolve by strikes
   const q = GameState.currentQ1();
@@ -491,8 +468,8 @@ function _handleR1Knockout() {
   const survivingTeam  = knockedTeam === 'A' ? 'B' : 'A';
 
   // No steal token required anymore — surviving team wins points automatically if 3 strikes hit
-  if (survivingTeam === 'A') r1.scoreA += 10;
-  else r1.scoreB += 10;
+  if (survivingTeam === 'A') r1.scoreA += 100;
+  else r1.scoreB += 100;
   showToast('🏆 ' + GameState.teamName(survivingTeam) + ' — ' + i18n.t('question_won'), 'correct', 2500);
   
   // Clean up and move on
@@ -511,10 +488,10 @@ function handleR1SuddenDeath(correct) {
   else GameState.stats.stealsAttemptedB++;
 
   if (correct) {
-    if (stealingTeam === 'A') { r1.scoreA += 20; GameState.stats.stealsSuccessA++; }
-    else { r1.scoreB += 20; GameState.stats.stealsSuccessB++; }
+    if (stealingTeam === 'A') { r1.scoreA += 100; GameState.stats.stealsSuccessA++; }
+    else { r1.scoreB += 100; GameState.stats.stealsSuccessB++; }
     Audio.victory();
-    showToast('🎉 ' + i18n.t('steal_success') + ' (+20)', 'correct', 2500);
+    showToast('🎉 ' + i18n.t('steal_success') + ' (+100)', 'correct', 2500);
   } else {
     // Draw — nobody wins the point
     Audio.wrong();
@@ -579,4 +556,17 @@ function confirmEndRound(onConfirm) {
     onConfirm();
   };
   document.getElementById('confirm-no').onclick = () => { overlay.style.display = 'none'; };
+}
+
+function _advanceTurn(r1) {
+  if (r1.doubleAnswerRequired) {
+    r1.doubleAnswerCount++;
+    if (r1.doubleAnswerCount >= 2) {
+      r1.doubleAnswerRequired = false;
+      r1.doubleAnswerCount = 0;
+      r1.activeTeam = r1.activeTeam === 'A' ? 'B' : 'A';
+    }
+  } else {
+    r1.activeTeam = r1.activeTeam === 'A' ? 'B' : 'A';
+  }
 }

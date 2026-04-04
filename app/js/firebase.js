@@ -71,9 +71,17 @@ const FirebaseDB = {
         const data = doc.data();
         
         // Don't trigger an update if it's the exact same data we just saved.
-        // We strip updatedAt for comparison because the server modifies it.
-        const incomingDataStr = JSON.stringify({ ...data, updatedAt: null });
-        const localDataStr = JSON.stringify({ ...JSON.parse(this._lastListenDataStr || '{}'), updatedAt: null });
+        const sortObj = (obj) => {
+          if (obj === null || typeof obj !== 'object') return obj;
+          if (Array.isArray(obj)) return obj.map(sortObj);
+          return Object.keys(obj).sort().reduce((result, key) => {
+            result[key] = sortObj(obj[key]);
+            return result;
+          }, {});
+        };
+        
+        const incomingDataStr = JSON.stringify(sortObj({ ...data, updatedAt: null }));
+        const localDataStr = JSON.stringify(sortObj({ ...JSON.parse(this._lastListenDataStr || '{}'), updatedAt: null }));
         
         if (incomingDataStr !== localDataStr) {
            this._lastListenDataStr = JSON.stringify(data);

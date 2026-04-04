@@ -15,6 +15,7 @@ const Audio = (() => {
     if (muted) return;
     try {
       const c = getCtx();
+      if (c.state === 'suspended') c.resume();
       const osc = c.createOscillator();
       const gain = c.createGain();
       osc.connect(gain);
@@ -47,6 +48,7 @@ const Audio = (() => {
     if (muted || ambientOsc) return;
     try {
       const c = getCtx();
+      if (c.state === 'suspended') c.resume();
       ambientOsc = c.createOscillator();
       ambientGain = c.createGain();
       ambientOsc.connect(ambientGain);

@@ -2,8 +2,8 @@
    QOOL — Round 3: Fast Questions / Clutch Finale
    ============================================================ */
 
-const R3_NORMAL_PTS    = 20;
-const R3_CLUTCH_PTS    = 50;
+const R3_NORMAL_PTS    = 40;
+const R3_CLUTCH_PTS    = 80;
 
 function initRound3() {
   const s = GameState;
@@ -28,7 +28,7 @@ function renderRound3() {
     finishRound3(); return;
   }
   
-  Audio.startAmbient();
+
 
   const lang = i18n.lang;
 
@@ -137,7 +137,7 @@ function renderRound3() {
       r3.lockedOutTeam = null;
       renderRound3();
     } else {
-      showToast('⚠️ لا يوجد أسئلة إضافية في هذا القسم', 'wrong', 2000);
+      showToast('⚠️ ' + (i18n.t('no_questions') || 'لا يوجد أسئلة إضافية'), 'wrong', 2000);
     }
   };
 }

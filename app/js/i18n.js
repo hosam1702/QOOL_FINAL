@@ -61,10 +61,10 @@ const TRANSLATIONS = {
     round3_type: 'الأسئلة السريعة',
 
     // Round 1 rules
-    r1_rule1: 'أجب بشكل صحيح لتحصد 10 نقاط — الفريقان يتناوبان الإجابة',
+    r1_rule1: 'أجب بشكل صحيح لتحافظ على دورك — الفريقان يتناوبان الإجابة',
     r1_rule2: 'لديك 20 ثانية للتفكير — الحكم يتحكم بالوقت يدوياً',
-    r1_rule3: 'إجابة خاطئة = إنذار. 3 إنذارات = تخسر دورك ويكسب خصمك 10 نقاط تلقائياً',
-    r1_rule4: 'رمز السرقة ☠️: "مساعدة لمرة واحدة" للتدخل وسرقة السؤال من الخصم بـ 20 نقطة!',
+    r1_rule3: 'إجابة خاطئة = إنذار. 3 إنذارات = تخسر دورك ويكسب خصمك 100 نقطة تلقائياً',
+    r1_rule4: 'رمز السرقة ☠️: "مساعدة لمرة واحدة" للتدخل وسرقة السؤال من الخصم بـ 100 نقطة!',
     r1_rule5: 'رمز الهجوم ⚔️: "مساعدة لمرة واحدة" تلزم الفريق الخصم بإجابتَين متتاليتَين',
 
     // Round 2 rules
@@ -72,12 +72,12 @@ const TRANSLATIONS = {
     r2_rule2: 'تجميع البنك 🏦: كل إجابة تُكشف قيمتها تضاف إلى "بنك" الجولة ولا تُحتسب كفوز حتى تنتهي اللوحة.',
     r2_rule3: 'الإنذارات (الأخطاء) ❌: أي إجابة خاطئة تسجل كـ"إنذار". 3 إنذارات متتالية تُنهي دور الفريق الأول فوراً.',
     r2_rule4: 'مرحلة السرقة 🚨: يحصل الفريق الثاني على فرصة تشاور جماعية لإعطاء "إجابة واحدة" لمحاولة سرقة اللوحة.',
-    r2_rule5: 'حسم البنك 🔄: سرقة صحيحة = البنك بالكامل للخصم. سرقة خاطئة = يعود للفريق الأول (تتضاعف النتيجة 1x, 2x, 3x).',
+    r2_rule5: 'حسم البنك 🔄: سرقة صحيحة = البنك بالكامل للخصم. سرقة خاطئة = يعود للفريق الأول (تتضاعف النتيجة 1x, 1x, 2x).',
 
     // Round 3 rules
-    r3_rule1: 'أسئلة سريعة جداً — كل إجابة تعطيك 20 نقطة',
+    r3_rule1: 'أسئلة سريعة جداً — كل إجابة تعطيك 40 نقطة',
     r3_rule2: 'أخطأت؟ السؤال ينتقل فوراً للفريق الخصم',
-    r3_rule3: 'آخر 3 أسئلة = وضع الحسم 🔴 — النقطة بـ 50 نقطة!',
+    r3_rule3: 'آخر 3 أسئلة = وضع الحسم 🔴 — النقطة بـ 80 نقطة!',
     r3_rule4: 'فريقك يمكنه قلْب النتيجة في الثواني الأخيرة مهما كان الفارق',
 
     // Gameplay - Round 1
@@ -137,7 +137,7 @@ const TRANSLATIONS = {
     team_wrong: 'خطأ ✗ (احوّل السؤال)',
     both_correct: 'كلاهما صحيح',
     neither: 'لا أحد',
-    clutch_mode: '🔴 وضع الحسم — 3× نقاط!',
+    clutch_mode: '🔴 وضع الحسم — +80 نقطة!',
     locked_out: 'محجوب! الفريق الآخر يجيب',
     timer_label: 'الوقت المتبقي',
 
@@ -234,21 +234,21 @@ const TRANSLATIONS = {
     round3_type: 'Fast Questions',
     round_rules: 'Round Rules',
 
-    r1_rule1: 'Correct answers grant +10 Points — teams alternate turns',
+    r1_rule1: 'Correct answers keep your turn — teams alternate turns',
     r1_rule2: 'You have 20 seconds — the referee manually controls the timer',
-    r1_rule3: 'Wrong = strike. 3 strikes = turn is lost and opponent gains +10 points',
-    r1_rule4: 'Steal Token ☠️: A single-use lifeline to instantly intercept for +20 points!',
+    r1_rule3: 'Wrong = strike. 3 strikes = turn is lost and opponent gains +100 points',
+    r1_rule4: 'Steal Token ☠️: A single-use lifeline to instantly intercept for +100 points!',
     r1_rule5: 'Attack Token ⚔️: A single-use lifeline forcing opponent to answer twice',
 
     r2_rule1: 'Solo Play 👤: The playing team answers one by one. Group consulting is STRICTLY PROHIBITED!',
     r2_rule2: 'Building the Bank 🏦: Revealed answers deposit their value into a temporary Bank, not directly to score.',
     r2_rule3: 'Strikes ❌: Every wrong answer earns a Strike. Accruing 3 Strikes immediately freezes the board.',
     r2_rule4: 'The Steal 🚨: The opposing team now groups up and consults to give ONE final answer to steal the board.',
-    r2_rule5: 'Resolution 🔄: A correct steal gives them the whole Bank. Wrong steal returns it to Team 1. Point values multiply every board (1x, 2x, 3x)!',
+    r2_rule5: 'Resolution 🔄: A correct steal gives them the whole Bank. Wrong steal returns it to Team 1. Point values multiply every board (1x, 1x, 2x)!',
 
-    r3_rule1: 'Questions are very fast — every correct answer earns 20 points',
+    r3_rule1: 'Questions are very fast — every correct answer earns 40 points',
     r3_rule2: 'Wrong answer? The question passes immediately to the opposing team',
-    r3_rule3: 'Last 3 questions = CLUTCH MODE 🔴 — points are worth 50 each!',
+    r3_rule3: 'Last 3 questions = CLUTCH MODE 🔴 — points are worth 80 each!',
     r3_rule4: 'Your team can flip the result in the final seconds regardless of the score gap',
 
     active_team: 'Active Team',
@@ -305,7 +305,7 @@ const TRANSLATIONS = {
     team_wrong: 'Wrong ✗ (pass)',
     both_correct: 'Both Correct',
     neither: 'Neither',
-    clutch_mode: '🔴 CLUTCH MODE — 3× Points!',
+    clutch_mode: '🔴 CLUTCH MODE — +80 pts!',
     locked_out: 'Locked out! Other team answers',
     timer_label: 'Time Left',
 

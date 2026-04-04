@@ -45,7 +45,7 @@ function renderRound2() {
   if (faceOffSection) faceOffSection.classList.add('hidden');
   if (gameplaySection) gameplaySection.classList.remove('hidden');
   
-  Audio.startAmbient();
+
 
   /* Build feud board */
   const board = document.getElementById('r2-feud-board');
@@ -264,8 +264,8 @@ function nextR2Question() {
   r2.currentBank    = 0;
 
   // Auto-increase multiplier
-  if (r2.questionIndex === 1) r2.multiplier = 2;
-  else if (r2.questionIndex >= 2) r2.multiplier = 3;
+  if (r2.questionIndex === 2) r2.multiplier = 2;
+  else r2.multiplier = 1;
 
   if (r2.questionIndex >= r2.questions.length) { finishRound2(); return; }
   renderRound2();

@@ -302,7 +302,9 @@ function makeScoreEditable(elId, getVal, setVal) {
     input.focus();
     input.select();
 
+    let isCancelled = false;
     const save = () => {
+      if (isCancelled) return;
       const raw = parseInt(input.value, 10);
       const val = isNaN(raw) || raw < 0 ? current : raw;
       el._scoreEditWired = false; // allow re-wire on next render
@@ -311,7 +313,11 @@ function makeScoreEditable(elId, getVal, setVal) {
 
     input.addEventListener('keydown', (ev) => {
       if (ev.key === 'Enter') { ev.preventDefault(); input.blur(); }
-      if (ev.key === 'Escape') { el._scoreEditWired = false; setVal(current); }
+      if (ev.key === 'Escape') { 
+        isCancelled = true;
+        el._scoreEditWired = false; 
+        setVal(current); 
+      }
     });
     input.addEventListener('blur', save);
   });
