@@ -912,14 +912,14 @@
       // Host Mode Logic
       const hostBtn = document.getElementById('btn-host-mode');
       const hostIcon = document.getElementById('host-mode-icon');
-      let isHostMode = localStorage.getItem('qool_host') === 'true';
+      let isHostMode = localStorage.getItem('qool_host') !== 'false';
       const applyHostMode = () => {
         document.body.classList.toggle('host-mode-active', isHostMode);
         if (hostBtn) hostBtn.style.opacity = isHostMode ? '1' : '0.6';
         if (hostBtn) hostBtn.style.background = isHostMode ? 'var(--clr-correct)' : 'var(--clr-primary)';
         if (hostIcon) hostIcon.textContent = isHostMode ? 'visibility' : 'visibility_off';
       };
-      applyHostMode(); // default off
+      applyHostMode(); // default on
 
       if (hostBtn) {
         hostBtn.onclick = () => {
