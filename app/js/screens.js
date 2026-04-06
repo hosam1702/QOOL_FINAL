@@ -13,13 +13,25 @@ function initHome() {
     const urlParams = new URLSearchParams(window.location.search);
     if (!urlParams.get('room')) {
       const randomRoom = Math.random().toString(36).substring(2, 6).toUpperCase();
-      window.location.href = `?room=${randomRoom}`;
+      window.location.href = `?room=${randomRoom}&action=new`;
       return; // Stop here, page will reload with new room
     }
+    _doNewGame();
+  };
+
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('action') === 'new') {
+    // Automatically transition to setup if we just arrived from a redirect
+    window.history.replaceState({}, '', `?room=${urlParams.get('room')}`);
+    _doNewGame();
+    return;
+  }
+
+  function _doNewGame() {
     GameState.reset();
     Router.go('setup');
     initSetup();
-  };
+  }
 
   // Resume button: show if there's an active game in progress
   const resumeBtn = document.getElementById('btn-resume-game');
