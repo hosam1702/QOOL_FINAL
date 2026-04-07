@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="theme-color" content="#09110e" />
+  <meta name="description" content="العب قوول الآن! تحدي المعرفة الأقوى والممتع للبطولات والمجموعات. استمتع بأسئلة بينج بونج، حرب العائلات، والمزيد. | QOOL – The ultimate competitive quiz game for groups and parties." />
+  <meta name="google-site-verification" content="IGzktVw2QYliGdn9qpQis0567UaPdXGr7b8f4H0odHk" />
+  <title>قوول | QOOL Quiz</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet" />
+
+  <!-- Authority Link (Canonical) -->
+  <link rel="canonical" href="https://qoolqa.com" />
+
+  <!-- Social Media Card Tags (Open Graph & Twitter) -->
+  <meta property="og:title" content="قوول | QOOL Quiz" />
+  <meta property="og:description" content="تحدي المعرفة الأقوى | QOOL – The ultimate competitive quiz game for groups and parties." />
+  <meta property="og:url" content="https://qoolqa.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="QOOL Quiz" />
+  <meta property="og:image" content="https://qoolqa.com/assets/og-image.png" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="قوول | QOOL Quiz" />
+  <meta name="twitter:description" content="تحدي المعرفة الأقوى | QOOL – The ultimate competitive quiz game for groups and parties." />
+  <meta name="twitter:image" content="https://qoolqa.com/assets/og-image.png" />
+
+  <!-- Mobile Web App Optimization -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQ99K8FRPR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RQ99K8FRPR');
+  </script>
+
+  <!-- Google Structured Data -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "قوول | QOOL Quiz",
+      "alternateName": ["QOOL", "قوول"],
+      "url": "https://qoolqa.com/"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "QOOL Quiz",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Web",
+      "abstract": "A competitive bilingual quiz game for groups and parties.",
+      "url": "https://qoolqa.com",
+      "sameAs": [
+        "https://www.tiktok.com/@trio_77770",
+        "https://www.instagram.com/trio_qtr"
+      ]
+    }
+  ]
+  </script>
+</head>
+
+<body>
+  <div id="app">
+
+    <!-- ╔══════════════════════════════════════════════════╗ -->
+    <!-- ║  HOME SCREEN                                     ║ -->
+    <!-- ╚══════════════════════════════════════════════════╝ -->
+    <section id="screen-home" class="screen active" style="position:relative;">
+
+
+      <!-- Top bar: minimal controls only -->
+      <div class="home-topbar">
+        <div class="nav-actions">
+          <button class="icon-btn btn-mute" title="Toggle Mute"><span
+              class="material-symbols-outlined">volume_up</span></button>
+          <button class="icon-btn" id="btn-lang-home" aria-label="Toggle language">
+            <span class="material-symbols-outlined">translate</span>
+          </button>
+          <button class="icon-btn" id="btn-theme-home" aria-label="Toggle theme">
+            <span class="material-symbols-outlined theme-icon">light_mode</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Full-screen hero -->
+      <div class="home-hero-full">
+        <div class="home-glow"></div>
+
+        <div class="home-brand">
+          <div class="home-trophy-wrap">
+            <div class="home-trophy-ring"></div>
+            <span class="home-trophy-emoji">🏆</span>
+          </div>
+          <h1 class="home-title" data-i18n="app_name">قوول</h1>
+          <p class="home-subtitle" data-nosnippet data-i18n="app_tagline">تحدي المعرفة الأقوى — قوول!</p>
+        </div>
+
+        <div class="home-actions">
+          <button id="btn-resume-game" class="btn btn-secondary btn-xl btn-full" style="display:none;">
+            <span class="material-symbols-outlined">play_circle</span>
+            <span data-i18n="resume_game">استكمال اللعبة</span>
+          </button>
+          <button id="btn-new-game" class="btn btn-primary btn-xl btn-full home-play-btn">
+            <span class="material-symbols-outlined">rocket_launch</span>
+            <span data-i18n="new_game">لعبة جديدة</span>
+          </button>
+          <a href="rules.html" target="_blank" class="btn btn-secondary btn-xl btn-full" style="text-decoration:none; margin-top: 10px;">
+            <span class="material-symbols-outlined">menu_book</span>
+            <span data-i18n="read_rules">اقرأ القواعد</span>
+          </a>
+        </div>
+
+        <!-- Round pills — quick overview, no cards -->
+        <div class="home-rounds-strip">
+          <div class="home-round-pill">
+            <span class="material-symbols-outlined" style="color:var(--clr-primary);font-size:18px;">swap_horiz</span>
+            <span data-i18n="round1_type">پينج پونج</span>
+          </div>
+          <div class="home-round-pill">
+            <span class="material-symbols-outlined" style="color:#f59e0b;font-size:18px;">family_restroom</span>
+            <span data-i18n="round2_type">حرب العائلات</span>
+          </div>
+          <div class="home-round-pill">
+            <span class="material-symbols-outlined" style="color:#a855f7;font-size:18px;">bolt</span>
+            <span data-i18n="round3_type">أسئلة سريعة</span>
+          </div>
+        </div>
+      </div>
+
+      <footer class="app-footer">
+        <div style="margin-bottom: 8px;">QOOL Quiz © 2025 · قوول للمسابقات</div>
+        <div class="social-links" style="display:flex; gap:12px; justify-content:center;">
+          <a href="https://www.tiktok.com/@trio_77770?_r=1&_t=ZS-95LM6SiQcEf" target="_blank" rel="noopener noreferrer" aria-label="TikTok" style="color:var(--text-muted); text-decoration:none;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/trio_qtr?igsh=N3lwZXhreWN2Z2hu" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color:var(--text-muted); text-decoration:none;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.22.41.56.22.96.48 1.36.88.4.4.66.8.88 1.36.16.42.36 1.05.41 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.22-.22.56-.48.96-.88 1.36-.4.4-.8.66-1.36.88-.42.16-1.05.36-2.22.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.22-.41-.56-.22-.96-.48-1.36-.88-.4-.4-.66-.8-.88-1.36-.16-.42-.36-1.05-.41-2.22C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.22.22-.56.48-.96.88-1.36.4-.4.8-.66 1.36-.88.42-.16 1.05-.36 2.22-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.16.27-2.93.57-.8.31-1.48.74-2.15 1.4-1.16 1.15-1.66 2.68-1.8 4.22-.06 1.28-.07 1.69-.07 4.95s.01 3.67.07 4.95c.14 1.54.64 3.07 1.8 4.22.67.66 1.35 1.09 2.15 1.4.77.3 1.65.51 2.93.57C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.16-.27 2.93-.57.8-.31 1.48-.74 2.15-1.4 1.16-1.15 1.66-2.68 1.8-4.22.06-1.28.07-1.69-.07-4.95s-.01-3.67-.07-4.95c-.14-1.54-.64-3.07-1.8-4.22-.67-.66-1.35-1.09-2.15-1.4-.77-.3-1.65-.51-2.93-.57C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4zm5.88-9.8a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"/></svg>
+          </a>
+        </div>
+      </footer>
+    </section>
+
+
+
+    <!-- ╔══════════════════════════════════════════════════╗ -->
+    <!-- ║  GAME SETUP SCREEN                               ║ -->
+    <!-- ╚══════════════════════════════════════════════════╝ -->
+    <section id="screen-setup" class="screen">
+
+      <!-- Setup header — distinct from home -->
+      <div class="setup-header">
+        <div class="setup-header-top">
+          <button class="icon-btn" id="btn-back-setup" aria-label="Back">
+            <span class="material-symbols-outlined">arrow_back_ios_new</span>
+          </button>
+          <div class="setup-header-title">
+            <span class="material-symbols-outlined" style="color:var(--clr-primary);font-size:22px;">settings</span>
+            <span data-i18n="setup_title">إعداد اللعبة</span>
+          </div>
+          <div style="display:flex;gap:6px;">
+            <button class="icon-btn" id="btn-lang-setup"><span
+                class="material-symbols-outlined">translate</span></button>
+            <button class="icon-btn" id="btn-theme-setup"><span
+                class="material-symbols-outlined theme-icon">light_mode</span></button>
+          </div>
+        </div>
+        <p class="setup-header-sub" data-i18n="setup_subtitle">أدخل أسماء الفرق واختر لونهم والفئات</p>
+      </div>
+
+      <div class="scroll-content">
+        <div class="container">
+
+          <!-- Section label: Teams -->
+          <div class="setup-section-label">
+            <span class="material-symbols-outlined">group</span>
+            <span data-i18n="teams_section">الفريقان</span>
+          </div>
+
+          <!-- Team A -->
+          <div class="card setup-team-card team-a-setup" style="margin-bottom:12px;">
+            <div class="setup-team-stripe" style="background:var(--clr-team-a);"></div>
+            <div class="setup-team-body">
+              <div class="form-group" style="margin-bottom:12px;">
+                <label class="form-label" data-i18n="team_a_name">اسم الفريق الأول</label>
+                <input class="form-input" id="input-team-a" type="text" data-i18n-placeholder="team_a_placeholder"
+                  placeholder="مثال: الصقور" maxlength="20" />
+              </div>
+              <div>
+                <div class="form-label" style="margin-bottom:8px;" data-i18n="pick_color">اختر لون الفريق</div>
+                <div class="color-swatches" id="color-swatches-a"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- VS divider -->
+          <div class="vs-divider">
+            <div class="vs-line"></div>
+            <span class="vs-badge">VS</span>
+            <div class="vs-line"></div>
+          </div>
+
+          <!-- Team B -->
+          <div class="card setup-team-card team-b-setup" style="margin-bottom:24px;">
+            <div class="setup-team-stripe" style="background:var(--clr-team-b);"></div>
+            <div class="setup-team-body">
+              <div class="form-group" style="margin-bottom:12px;">
+                <label class="form-label" data-i18n="team_b_name">اسم الفريق الثاني</label>
+                <input class="form-input" id="input-team-b" type="text" data-i18n-placeholder="team_b_placeholder"
+                  placeholder="مثال: النسور" maxlength="20" />
+              </div>
+              <div>
+                <div class="form-label" style="margin-bottom:8px;" data-i18n="pick_color">اختر لون الفريق</div>
+                <div class="color-swatches" id="color-swatches-b"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section label: Game Settings -->
+          <div class="setup-section-label">
+            <span class="material-symbols-outlined">tune</span>
+            <span data-i18n="game_settings_section">إعدادات اللعبة</span>
+          </div>
+
+          <!-- Game Length -->
+          <div class="card" style="margin-bottom:12px;padding:16px 18px;">
+            <div class="form-label" style="margin-bottom:10px;" data-i18n="game_length">مدة اللعب</div>
+            <div class="gl-toggle">
+              <button class="gl-btn selected" id="gl-quick">
+                <span class="material-symbols-outlined" style="font-size:18px;">bolt</span>
+                <span data-i18n="quick_game">سريعة</span>
+              </button>
+              <button class="gl-btn" id="gl-epic">
+                <span class="material-symbols-outlined" style="font-size:18px;">local_fire_department</span>
+                <span data-i18n="epic_game">ملحمية</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Categories -->
+          <div class="card" style="margin-bottom:28px;padding:16px 18px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+              <div class="form-label" data-i18n="select_categories">اختر الفئات</div>
+              <span style="font-size:0.75rem;color:var(--text-muted);" data-i18n="categories_hint">فئة واحدة على
+                الأقل</span>
+            </div>
+            <div class="category-grid" id="category-grid"></div>
+          </div>
+
+          <button id="btn-start-game" class="btn btn-primary btn-lg btn-full">
+            <span class="material-symbols-outlined">rocket_launch</span>
+            <span data-i18n="start_game">ابدأ اللعبة</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ╔══════════════════════════════════════════════════╗ -->
+    <!-- ║  ROUND INTRO SCREEN                              ║ -->
+    <!-- ╚══════════════════════════════════════════════════╝ -->
+    <section id="screen-round-intro" class="screen">
+      <header class="nav-header">
+        <div class="nav-logo">
+          <span class="material-symbols-outlined nav-logo-icon" id="intro-round-icon"
+            style="background:none;color:var(--clr-primary)">swap_horiz</span>
+        </div>
+        <div class="nav-actions">
+          <button class="icon-btn btn-mute" title="Toggle Mute"><span
+              class="material-symbols-outlined">volume_up</span></button>
+          <button class="icon-btn" id="btn-lang-intro"><span class="material-symbols-outlined">translate</span></button>
+          <button class="icon-btn" id="btn-theme-intro"><span
+              class="material-symbols-outlined theme-icon">light_mode</span></button>
+        </div>
+      </header>
+
+      <div class="scroll-content">
+        <div class="container">
+          <!-- Score preview for rounds 2 & 3 -->
+          <div id="intro-score-preview" class="score-preview-bar" style="display:none;">
+            <span id="intro-preview-a" style="color:var(--clr-team-a)">0</span>
+            <span style="color:var(--text-muted)">vs</span>
+            <span id="intro-preview-b" style="color:var(--clr-team-b)">0</span>
+          </div>
+
+          <div class="round-intro-hero">
+            <div class="round-number-badge">
+              <span class="material-symbols-outlined" style="font-size:16px">info</span>
+              <span id="intro-round-number">الجولة الأولى</span>
+            </div>
+            <h1 class="round-title">
+              <span id="intro-round-type"
+                style="display:block;font-size:0.55em;color:var(--text-secondary);margin-bottom:4px;">تحدي
+                الأدوار</span>
+            </h1>
+          </div>
+
+          <!-- Coin flip (Round 1 only) -->
+          <div id="coin-flip-section" class="coin-flip-section card" style="margin-bottom:16px;">
+            <div
+              style="font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--clr-primary);margin-bottom:10px;"
+              data-i18n="coin_flip">القرعة</div>
+            <button id="btn-coin-flip" class="btn btn-secondary btn-full">
+              <span>🪙</span>
+              <span data-i18n="flip_btn">ارمِ العملة!</span>
+            </button>
+            <div id="flip-result" class="flip-result"></div>
+          </div>
+
+          <div class="card" style="margin-bottom:24px;">
+            <div
+              style="font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--clr-primary);margin-bottom:14px;"
+              data-i18n="round_rules">قواعد الجولة</div>
+            <div class="rules-list" id="intro-rules-list"></div>
+          </div>
+
+          <button id="btn-begin-round" class="btn btn-primary btn-lg btn-full">
+            <span class="material-symbols-outlined">play_arrow</span>
+            <span data-i18n="begin_round">ابدأ الجولة</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ╔══════════════════════════════════════════════════╗ -->
+    <!-- ║  ROUND 1: PING-PONG BATTLE                      ║ -->
+    <!-- ╚══════════════════════════════════════════════════╝ -->
+    <section id="screen-round1" class="screen" style="position:relative;">
+
+      <header class="nav-header">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span
+            style="font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--clr-primary);"
+            data-i18n="round1_name">الجولة الأولى</span>
+          <span style="font-size:0.75rem;color:var(--text-muted);" data-i18n="round1_type">تحدي الأدوار</span>
+        </div>
+        <div class="nav-actions">
+          <button class="icon-btn btn-mute" title="Toggle Mute"><span
+              class="material-symbols-outlined">volume_up</span></button>
+          <button class="icon-btn" id="btn-lang-r1"><span class="material-symbols-outlined">translate</span></button>
+          <button class="icon-btn" id="btn-theme-r1"><span
+              class="material-symbols-outlined theme-icon">light_mode</span></button>
+          <button class="icon-btn" id="btn-end-r1" style="color:var(--clr-wrong);" aria-label="End round">
+            <span class="material-symbols-outlined">stop_circle</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="scroll-content">
+        <div class="container-wide">
+
+          <!-- Active team + timer -->
+          <div class="active-team-banner" style="margin-bottom:12px;">
+            <div>
+              <div class="active-team-badge" id="r1-active-badge">دورك!</div>
+              <div class="active-team-name" id="r1-active-name">—</div>
+            </div>
+            <div class="timer-container"
+              style="padding:8px 12px;min-width:120px;display:flex;flex-direction:column;justify-content:center;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                <div id="r1-timer-value" class="timer-value">20</div>
+                <div class="referee-only" style="display:flex;gap:4px;">
+                  <button id="r1-btn-pause-timer" class="icon-btn"
+                    style="width:24px;height:24px;background:rgba(255,255,255,0.2);"><span
+                      class="material-symbols-outlined" style="font-size:14px;">pause</span></button>
+                  <button id="r1-btn-reset-timer" class="icon-btn"
+                    style="width:24px;height:24px;background:rgba(255,255,255,0.2);"><span
+                      class="material-symbols-outlined" style="font-size:14px;">replay</span></button>
+                </div>
+              </div>
+              <div class="timer-bar-track" style="margin-top:0;">
+                <div class="timer-bar-fill" id="r1-timer-bar"></div>
+              </div>
+              <!-- Timer paused hint -->
+              <div id="r1-timer-hint" style="font-size:0.6rem;color:var(--clr-warn);text-align:center;margin-top:2px;display:none;" data-i18n-key="timer_paused_hint">▶ اضغط للبدء</div>
+            </div>
+          </div>
+
+          <!-- Attack double banner -->
+          <div id="r1-double-banner" class="double-banner" style="display:none;margin-bottom:10px;">
+            ⚔️ يجب الإجابة بإجابتَين متتاليتَين
+          </div>
+
+          <div class="gameplay-grid">
+            <!-- Left: question + answers + actions -->
+            <div style="display:flex;flex-direction:column;gap:12px;">
+
+              <!-- Question card -->
+              <div class="question-card">
+                <div
+                  style="padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+                  <span class="question-category-badge">
+                    <span class="material-symbols-outlined" style="font-size:14px">sell</span>
+                    <span id="r1-q-category">—</span>
+                  </span>
+                  <span style="font-size:0.8rem;color:var(--text-muted);" id="r1-q-number">—</span>
+                </div>
+                <div class="question-display">
+                  <p class="question-text" id="r1-q-text">—</p>
+                </div>
+              </div>
+
+              <!-- Answers board -->
+              <div class="card" style="padding:12px;">
+                <div
+                  style="font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--clr-primary);margin-bottom:10px;"
+                  data-i18n="answers_board">الإجابات</div>
+                <div class="answer-chips-board" id="r1-answers-board"></div>
+              </div>
+
+              <!-- Normal Action buttons -->
+              <div id="r1-normal-actions">
+                <div class="r1-action-grid">
+                  <button id="r1-btn-found" class="btn btn-correct btn-full" disabled>
+                    <span class="material-symbols-outlined">check_circle</span>
+                    <span data-i18n="answer_found">إجابة صحيحة! ✓</span>
+                  </button>
+                  <button id="r1-btn-strike" class="btn btn-wrong btn-full referee-only">
+                    <span class="material-symbols-outlined">cancel</span>
+                    <span data-i18n="add_strike">إجابة خاطئة ❌</span>
+                  </button>
+                  <button id="r1-btn-force-correct" class="btn btn-full referee-only"
+                    style="grid-column:1/-1; background:var(--clr-correct); color:white; font-weight:800; display:flex; justify-content:center; gap:6px;">
+                    <span class="material-symbols-outlined">star</span>
+                    <span data-i18n="custom_correct">إجابة صحيحة (مخصصة)</span>
+                  </button>
+                  <button id="r1-btn-attack" class="btn btn-warn btn-full btn-attack referee-only"
+                    style="grid-column:1/-1;">
+                    ⚔️ <span data-i18n="attack_btn">هجوم!</span>
+                  </button>
+                  <button id="r1-btn-skip-q" class="btn btn-secondary btn-full referee-only"
+                    style="grid-column:1/-1; display:flex; justify-content:center;">
+                    ⏭️ <span data-i18n="skip_question">تخطي / تغيير السؤال</span>
+                  </button>
+                  <button id="r1-btn-next-q" class="btn btn-full referee-only"
+                    style="grid-column:1/-1; background:var(--clr-primary); color:white; font-weight:800; display:flex; justify-content:center;">
+                    ⏭️ <span data-i18n="next_question">السؤال التالي</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Sudden death panel -->
+              <div id="r1-sudden-death" class="sudden-death-panel hidden">
+                <div style="text-align:center;margin-bottom:14px;">
+                  <div style="font-size:1.4rem;font-weight:900;color:var(--clr-wrong);" data-i18n="sudden_death">الموت
+                    المفاجئ ☠️</div>
+                  <div style="color:var(--text-secondary);margin-top:4px;" data-i18n="sudden_death_desc">إجابة واحدة
+                    صحيحة لسرقة النقطة!</div>
+                  <div style="font-size:1.1rem;font-weight:900;margin-top:8px;" id="r1-sd-team"></div>
+                </div>
+                <div style="display:flex;gap:10px;">
+                  <button id="r1-sd-correct" class="btn btn-correct btn-full" data-i18n="steal_success_btn">✅ سرق
+                    النقطة!</button>
+                  <button id="r1-sd-wrong" class="btn btn-wrong btn-full" data-i18n="steal_fail_btn">✗ فشل
+                    السرقة</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: team panels -->
+            <div class="gameplay-right" style="display:flex;flex-direction:column;gap:12px;">
+
+              <!-- Team A panel -->
+              <div class="score-card team-a-card" id="r1-card-a">
+                <div style="flex:1;">
+                  <div class="score-name" id="r1-name-a" style="color:var(--clr-team-a)">الفريق أ</div>
+                  <div style="display:flex;align-items:center;gap:6px;">
+                    <div class="tracker-row" id="r1-strikes-a" style="margin-top:6px;"></div>
+                    <button id="r1-btn-undo-strike-a" class="icon-btn referee-only"
+                      style="margin-top:6px;width:20px;height:20px;font-size:12px;" title="Undo Strike">-</button>
+                  </div>
+                  <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;">
+                    <span id="r1-steal-a" class="steal-token-badge available cursor-pointer"
+                      title="Toggle Steal Token">☠️ سرقة</span>
+                    <span id="r1-attack-a" class="attack-token cursor-pointer" title="Toggle Attack Token">⚔️
+                      هجوم</span>
+                  </div>
+                </div>
+                <div style="display:flex; flex-direction:column; align-items:center;">
+                  <button id="r1-btn-score-up-a" class="icon-btn referee-only"
+                    style="margin-bottom:4px;width:26px;height:26px;"><span class="material-symbols-outlined"
+                      style="font-size:18px;">add</span></button>
+                  <div class="score-value" id="r1-score-a" style="line-height:1;">0</div>
+                  <button id="r1-btn-score-dn-a" class="icon-btn referee-only"
+                    style="margin-top:4px;width:26px;height:26px;"><span class="material-symbols-outlined"
+                      style="font-size:18px;">remove</span></button>
+                </div>
+              </div>
+
+              <!-- Team B panel -->
+              <div class="score-card team-b-card" id="r1-card-b">
+                <div style="flex:1;">
+                  <div class="score-name" id="r1-name-b" style="color:var(--clr-team-b)">الفريق ب</div>
+                  <div style="display:flex;align-items:center;gap:6px;">
+                    <div class="tracker-row" id="r1-strikes-b" style="margin-top:6px;"></div>
+                    <button id="r1-btn-undo-strike-b" class="icon-btn referee-only"
+                      style="margin-top:6px;width:20px;height:20px;font-size:12px;" title="Undo Strike">-</button>
+                  </div>
+                  <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;">
+                    <span id="r1-steal-b" class="steal-token-badge available cursor-pointer"
+                      title="Toggle Steal Token">☠️ سرقة</span>
+                    <span id="r1-attack-b" class="attack-token cursor-pointer" title="Toggle Attack Token">⚔️
+                      هجوم</span>
+                  </div>
+                </div>
+                <div style="display:flex; flex-direction:column; align-items:center;">
+                  <button id="r1-btn-score-up-b" class="icon-btn referee-only"
+                    style="margin-bottom:4px;width:26px;height:26px;"><span class="material-symbols-outlined"
+                      style="font-size:18px;">add</span></button>
+                  <div class="score-value" id="r1-score-b" style="line-height:1;">0</div>
+                  <button id="r1-btn-score-dn-b" class="icon-btn referee-only"
+                    style="margin-top:4px;width:26px;height:26px;"><span class="material-symbols-outlined"
+                      style="font-size:18px;">remove</span></button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⏱ Timer-expiry referee decision overlay removed for game pacing -->
+    </section>
+
+    <!-- ╔══════════════════════════════════════════════════╗ -->
+    <!-- ║  ROUND 2: FAMILY FEUD                           ║ -->
+    <!-- ╚══════════════════════════════════════════════════╝ -->
+    <section id="screen-round2" class="screen">
+      <header class="nav-header">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#f59e0b;"
+            data-i18n="round2_name">الجولة الثانية</span>
+          <span id="r2-multiplier" class="multiplier-badge" style="display:none;">1x</span>
+        </div>
+        <div class="nav-actions">
+          <button class="icon-btn btn-mute" title="Toggle Mute"><span
+              class="material-symbols-outlined">volume_up</span></button>
+          <button class="icon-btn" id="btn-lang-r2"><span class="material-symbols-outlined">translate</span></button>
+          <button class="icon-btn" id="btn-theme-r2"><span
+              class="material-symbols-outlined theme-icon">light_mode</span></button>
+          <button class="icon-btn" id="btn-end-r2" style="color:var(--clr-wrong);">
+            <span class="material-symbols-outlined">stop_circle</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- ── Compact sticky score + bank strip ── -->
+      <div class="r2-score-strip">
+        <div class="score-card team-a-card r2-strip-team" id="r2-card-a">
+          <div class="r2-strip-name" id="r2-name-a" style="color:var(--clr-team-a)">الفريق أ</div>
+          <div style="display:flex;align-items:center;gap:4px;">
+            <button id="r2-btn-score-dn-a" class="icon-btn referee-only" style="width:22px;height:22px;"><span
+                class="material-symbols-outlined" style="font-size:15px;">remove</span></button>
+            <div class="score-value" id="r2-score-a" style="font-size:1.5rem;line-height:1;color:var(--clr-team-a)">0
+            </div>
+            <button id="r2-btn-score-up-a" class="icon-btn referee-only" style="width:22px;height:22px;"><span
+                class="material-symbols-outlined" style="font-size:15px;">add</span></button>
+          </div>
+        </div>
+
+        <div class="r2-strip-bank">
+          <span class="material-symbols-outlined" style="font-size:16px;color:#f59e0b;">account_balance</span>
+          <div id="r2-bank-value" style="font-size:1.4rem;font-weight:900;color:#f59e0b;line-height:1.1;">0</div>
+          <div
+            style="font-size:0.6rem;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);"
+            data-i18n="bank">البنك</div>
+        </div>
+
+        <div class="score-card team-b-card r2-strip-team" id="r2-card-b">
+          <div class="r2-strip-name" id="r2-name-b" style="color:var(--clr-team-b)">الفريق ب</div>
+          <div style="display:flex;align-items:center;gap:4px;">
+            <button id="r2-btn-score-dn-b" class="icon-btn referee-only" style="width:22px;height:22px;"><span
+                class="material-symbols-outlined" style="font-size:15px;">remove</span></button>
+            <div class="score-value" id="r2-score-b" style="font-size:1.5rem;line-height:1;color:var(--clr-team-b)">0
+            </div>
+            <button id="r2-btn-score-up-b" class="icon-btn referee-only" style="width:22px;height:22px;"><span
+                class="material-symbols-outlined" style="font-size:15px;">add</span></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Scrollable board area ── -->
+      <div class="scroll-content">
+        <div style="padding:12px;max-width:900px;width:100%;margin:0 auto;">
+
+          <!-- Face-off (auto-hidden by JS) -->
+          <div id="r2-face-off" class="face-off-panel hidden">
+            <div style="font-size:1rem;font-weight:800;margin-bottom:12px;" data-i18n="face_off">المواجهة — من يتحكم؟
+            </div>
+            <div class="face-off-btns">
+              <button id="r2-fo-btn-a" class="btn btn-full"
+                style="border:2px solid var(--clr-team-a);color:var(--clr-team-a);background:rgba(29,205,147,0.08);">تحكم
+                الفريق أ</button>
+              <button id="r2-fo-btn-b" class="btn btn-full"
+                style="border:2px solid var(--clr-team-b);color:var(--clr-team-b);background:rgba(59,130,246,0.08);">تحكم
+                الفريق ب</button>
+            </div>
+          </div>
+
+          <!-- Main gameplay -->
+          <div id="r2-gameplay-section" class="hidden">
+            <div class="question-card" style="margin-bottom:14px;">
+              <div class="question-display" style="padding:14px 16px;">
+                <span class="question-category-badge"
+                  style="background:#f59e0b;color:#1a0a00;margin-bottom:10px;display:inline-flex;">
+                  <span class="material-symbols-outlined" style="font-size:14px">family_restroom</span>
+                  <span data-i18n="current_topic">الموضوع</span>
+                </span>
+                <p class="question-text" id="r2-q-text" style="font-size:clamp(1rem,3vw,1.4rem);">—</p>
+              </div>
+            </div>
+            <div class="feud-board" id="r2-feud-board"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Pinned bottom referee control bar ── -->
+      <div class="r2-bottom-bar referee-only">
+
+        <!-- Normal round controls -->
+        <div id="r2-normal-section">
+          <div class="r2-strikes-header">
+            <span class="material-symbols-outlined" style="font-size:15px;color:var(--clr-wrong);">cancel</span>
+            <span
+              style="font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--clr-wrong);"
+              data-i18n="strikes">الأخطاء</span>
+            <div class="tracker-row" id="r2-strikes-row" style="gap:8px;flex:1;"></div>
+            <button id="r2-btn-undo-strike" class="icon-btn" style="width:24px;height:24px;flex-shrink:0;">
+              <span class="material-symbols-outlined" style="font-size:14px;">undo</span>
+            </button>
+          </div>
+          <div class="r2-action-row">
+            <button id="r2-btn-strike" class="btn btn-wrong btn-full">
+              <span class="material-symbols-outlined">cancel</span>
+              <span data-i18n="add_strike">خطأ ❌</span>
+            </button>
+            <button id="r2-btn-next-q" class="btn btn-full" style="background:var(--clr-primary);color:var(--bg-base);">
+              <span class="material-symbols-outlined">skip_next</span>
+              <span data-i18n="next_q">سؤال تالٍ</span>
+            </button>
+          </div>
+          <button id="r2-btn-skip-q" class="btn btn-secondary btn-full" style="margin-top:8px;font-size:0.85rem;">
+            <span class="material-symbols-outlined">restart_alt</span>
+            <span data-i18n="skip_question">تغيير السؤال</span>
+          </button>
+        </div>
+
+        <!-- Steal phase controls -->
+        <div id="r2-steal-section" class="hidden">
+          <div class="r2-steal-header">
+            <span class="material-symbols-outlined" style="color:#a855f7;font-size:20px;">bolt</span>
+            <span style="font-weight:900;color:#a855f7;font-size:1rem;" data-i18n="steal_phase">مرحلة السرقة!</span>
+            <span style="font-size:0.9rem;font-weight:800;color:var(--text-primary);" id="steal-team-name"></span>
+          </div>
+          <div class="r2-action-row">
+            <button id="btn-steal-correct" class="btn btn-correct btn-full">✅ <span data-i18n="steal_correct">السرقة
+                صحيحة</span></button>
+            <button id="btn-steal-wrong" class="btn btn-wrong btn-full">✗ <span data-i18n="steal_wrong">السرقة
+                خاطئة</span></button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ╔══════════════════════════════════════════════════╗ -->
+    <!-- ║  ROUND 3: FAST QUESTIONS                        ║ -->
+    <!-- ╚══════════════════════════════════════════════════╝ -->
+    <section id="screen-round3" class="screen">
+      <header class="nav-header">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#a855f7;"
+            data-i18n="round3_name">الجولة الثالثة</span>
+          <span class="q-counter" id="r3-q-counter">Q 1 / 10</span>
+          <span id="r3-clutch-badge" class="clutch-badge" style="display:none;" data-i18n="clutch_mode">🔴 وضع
+            الحسم</span>
+        </div>
+        <div class="nav-actions">
+          <button class="icon-btn btn-mute" title="Toggle Mute"><span
+              class="material-symbols-outlined">volume_up</span></button>
+          <button class="icon-btn" id="btn-lang-r3"><span class="material-symbols-outlined">translate</span></button>
+          <button class="icon-btn" id="btn-theme-r3"><span
+              class="material-symbols-outlined theme-icon">light_mode</span></button>
+          <button class="icon-btn" id="btn-end-r3" style="color:var(--clr-wrong);">
+            <span class="material-symbols-outlined">stop_circle</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Progress bar -->
+      <div class="progress-bar-container" style="border-radius:0;height:5px;">
+        <div class="progress-bar-fill" id="r3-progress-fill" style="background:#a855f7;"></div>
+      </div>
+
+      <div class="scroll-content">
+        <div class="container">
+
+          <!-- Points per question indicator -->
+          <div style="text-align:center;margin-bottom:8px;">
+            <span style="font-size:0.8rem;color:var(--text-muted);" data-i18n="pts_per_q">النقاط لكل سؤال: </span>
+            <span id="r3-pts-label" style="font-weight:900;color:var(--clr-primary);font-size:1rem;">+40</span>
+          </div>
+
+          <!-- Question card -->
+          <div class="question-card" style="margin-bottom:14px;">
+            <div style="padding:10px 14px;border-bottom:1px solid var(--border);">
+              <span class="question-category-badge" style="background:#a855f7;">
+                <span class="material-symbols-outlined" style="font-size:14px">bolt</span>
+                <span id="r3-q-category">—</span>
+              </span>
+            </div>
+            <div class="question-display">
+              <p class="question-text" id="r3-q-text" style="font-size:clamp(1.3rem,4vw,1.8rem);">—</p>
+            </div>
+          </div>
+
+          <!-- Big hit zones -->
+          <div class="r3-zones">
+            <div class="r3-zone r3-zone-a" id="r3-zone-a">
+              <div class="score-name" id="r3-name-a" style="color:var(--clr-team-a);text-align:center;">الفريق أ</div>
+              <div style="display:flex; justify-content:center; align-items:center; gap:8px;">
+                <button id="r3-btn-score-dn-a" class="icon-btn referee-only" style="width:24px;height:24px;"><span
+                    class="material-symbols-outlined" style="font-size:16px;">remove</span></button>
+                <div class="score-value" id="r3-score-a" style="text-align:center;color:var(--clr-team-a);">0</div>
+                <button id="r3-btn-score-up-a" class="icon-btn referee-only" style="width:24px;height:24px;"><span
+                    class="material-symbols-outlined" style="font-size:16px;">add</span></button>
+              </div>
+              <button id="r3-btn-a" class="btn btn-score btn-full"
+                style="padding:18px 8px;font-size:1rem;background:var(--clr-team-a);color:#000;">الفريق أ ✓</button>
+              <button id="r3-btn-wrong-a" class="btn btn-wrong btn-full" style="font-size:0.85rem;">✗ خطأ
+                (احوّل)</button>
+            </div>
+            <div class="r3-zone r3-zone-b" id="r3-zone-b">
+              <div class="score-name" id="r3-name-b" style="color:var(--clr-team-b);text-align:center;">الفريق ب</div>
+              <div style="display:flex; justify-content:center; align-items:center; gap:8px;">
+                <button id="r3-btn-score-dn-b" class="icon-btn referee-only" style="width:24px;height:24px;"><span
+                    class="material-symbols-outlined" style="font-size:16px;">remove</span></button>
+                <div class="score-value" id="r3-score-b" style="text-align:center;color:var(--clr-team-b);">0</div>
+                <button id="r3-btn-score-up-b" class="icon-btn referee-only" style="width:24px;height:24px;"><span
+                    class="material-symbols-outlined" style="font-size:16px;">add</span></button>
+              </div>
+              <button id="r3-btn-b" class="btn btn-score btn-full"
+                style="padding:18px 8px;font-size:1rem;background:var(--clr-team-b);color:#fff;">الفريق ب ✓</button>
+              <button id="r3-btn-wrong-b" class="btn btn-wrong btn-full" style="font-size:0.85rem;">✗ خطأ
+                (احوّل)</button>
+            </div>
+          </div>
+
+          <!-- Shared buttons -->
+          <div class="r3-small-btns" style="margin-top:10px;">
+            <button id="r3-btn-both" class="btn btn-secondary btn-full" style="font-size:0.9rem;"
+              data-i18n="both_correct">كلاهما</button>
+            <button id="r3-btn-neither" class="btn btn-secondary btn-full" style="font-size:0.9rem;"
+              data-i18n="neither">لا أحد</button>
+          </div>
+          <button id="r3-btn-skip-q" class="btn btn-secondary btn-full referee-only"
+            style="margin-top:10px; display:flex; justify-content:center;">
+            ⏭️ <span data-i18n="skip_question">تخطي / تغيير السؤال</span>
+          </button>
+          <button id="r3-btn-next-q" class="btn btn-full referee-only"
+            style="margin-top:10px; background:var(--clr-primary); color:white; font-weight:800; display:flex; justify-content:center;">
+            ⏭️ <span data-i18n="next_question">السؤال التالي</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ╔══════════════════════════════════════════════════╗ -->
+    <!-- ║  SCOREBOARD SCREEN                               ║ -->
+    <!-- ╚══════════════════════════════════════════════════╝ -->
+    <section id="screen-scoreboard" class="screen">
+      <header class="nav-header">
+        <div class="nav-logo">
+          <div class="nav-logo-icon"><span class="material-symbols-outlined">leaderboard</span></div>
+          <span class="nav-logo-text" data-i18n="app_name">قوول</span>
+        </div>
+        <div class="nav-actions">
+          <button class="icon-btn btn-mute" title="Toggle Mute"><span
+              class="material-symbols-outlined">volume_up</span></button>
+          <button class="icon-btn" id="btn-lang-sb"><span class="material-symbols-outlined">translate</span></button>
+          <button class="icon-btn" id="btn-theme-sb"><span
+              class="material-symbols-outlined theme-icon">light_mode</span></button>
+        </div>
+      </header>
+
+      <div class="scroll-content">
+        <div class="container">
+          <div class="scoreboard-hero">
+            <div class="complete-badge">
+              <span class="material-symbols-outlined" style="font-size:14px">check_circle</span>
+              <span id="sb-round-label">انتهت الجولة!</span>
+            </div>
+            <h1 class="scoreboard-title" data-i18n="round_complete">النتائج</h1>
+          </div>
+
+          <!-- Team A -->
+          <div class="team-score-card loser" id="sb-card-a" style="margin-bottom:14px;">
+            <span class="winner-crown hidden" id="sb-crown-a">👑</span>
+            <div
+              style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--clr-team-a);margin-bottom:4px;"
+              id="sb-team-a-name">الفريق أ</div>
+            <div class="team-score-big" id="sb-team-a-round" style="color:var(--clr-team-a);">0</div>
+            <div style="font-size:0.8rem;color:var(--text-secondary);margin-top:4px;">
+              <span data-i18n="total_score">المجموع</span>: <strong id="sb-team-a-total"
+                style="color:var(--text-primary);">0</strong>
+            </div>
+          </div>
+
+          <!-- Team B -->
+          <div class="team-score-card loser" id="sb-card-b" style="margin-bottom:14px;">
+            <span class="winner-crown hidden" id="sb-crown-b">👑</span>
+            <div
+              style="font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--clr-team-b);margin-bottom:4px;"
+              id="sb-team-b-name">الفريق ب</div>
+            <div class="team-score-big" id="sb-team-b-round" style="color:var(--clr-team-b);">0</div>
+            <div style="font-size:0.8rem;color:var(--text-secondary);margin-top:4px;">
+              <span data-i18n="total_score">المجموع</span>: <strong id="sb-team-b-total"
+                style="color:var(--text-primary);">0</strong>
+            </div>
+          </div>
+
+          <!-- Gap to tie -->
+          <div id="sb-diff-label" class="diff-label" style="display:none;margin-bottom:16px;"></div>
+
+          <button id="btn-next-round" class="btn btn-primary btn-lg btn-full">
+            <span class="material-symbols-outlined">arrow_forward</span>
+            <span data-i18n="next_round">الجولة التالية</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ╔══════════════════════════════════════════════════╗ -->
+    <!-- ║  FINAL RESULTS SCREEN                           ║ -->
+    <!-- ╚══════════════════════════════════════════════════╝ -->
+    <section id="screen-final" class="screen">
+      <header class="nav-header">
+        <div class="nav-logo">
+          <div class="nav-logo-icon"><span class="material-symbols-outlined">emoji_events</span></div>
+          <span class="nav-logo-text" data-i18n="game_over">انتهت اللعبة!</span>
+        </div>
+        <div class="nav-actions">
+          <button class="icon-btn btn-mute" title="Toggle Mute"><span
+              class="material-symbols-outlined">volume_up</span></button>
+          <button class="icon-btn" id="btn-lang-final"><span class="material-symbols-outlined">translate</span></button>
+          <button class="icon-btn" id="btn-theme-final"><span
+              class="material-symbols-outlined theme-icon">light_mode</span></button>
+        </div>
+      </header>
+
+      <div class="scroll-content">
+        <div class="container">
+          <!-- Winner banner -->
+          <div class="winner-banner" style="margin-bottom:24px;">
+            <span class="winner-emoji">🏆</span>
+            <div class="winner-team-name" id="final-winner-name">—</div>
+            <div class="winner-subtitle" id="final-winner-sub">النتائج النهائية</div>
+          </div>
+
+          <!-- Score breakdown -->
+          <div class="card" style="margin-bottom:16px;overflow:hidden;padding:0;">
+            <div style="padding:14px 18px;border-bottom:1px solid var(--border);">
+              <span
+                style="font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--clr-primary);"
+                data-i18n="final_results">النتائج النهائية</span>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="results-table">
+                <thead>
+                  <tr>
+                    <th data-i18n="round">الجولة</th>
+                    <th id="final-th-a">الفريق أ</th>
+                    <th id="final-th-b">الفريق ب</th>
+                  </tr>
+                </thead>
+                <tbody id="final-table-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="card" style="margin-bottom:20px;">
+            <div
+              style="font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--clr-primary);margin-bottom:12px;"
+              data-i18n="stats_title">إحصائيات اللعبة</div>
+            <div id="final-stats"></div>
+          </div>
+
+          <!-- CTAs -->
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <button id="btn-play-again" class="btn btn-primary btn-lg btn-full">
+              <span class="material-symbols-outlined">replay</span>
+              <span data-i18n="play_again">العب مجدداً</span>
+            </button>
+            <button id="btn-new-game-final" class="btn btn-secondary btn-lg btn-full">
+              <span class="material-symbols-outlined">add_circle</span>
+              <span data-i18n="new_game">لعبة جديدة</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ╔══════════════════════════════════════════════════╗ -->
+    <!-- ║  CONFIRM DIALOG (shared)                        ║ -->
+    <!-- ╚══════════════════════════════════════════════════╝ -->
+    <div id="confirm-overlay"
+      style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:200;align-items:flex-end;backdrop-filter:blur(4px);">
+      <div
+        style="background:var(--bg-surface);border-radius:24px 24px 0 0;padding:28px;width:100%;max-width:600px;margin:0 auto;animation:slideUp 0.3s ease;">
+        <p style="font-size:1.1rem;font-weight:800;margin-bottom:20px;" id="confirm-message">إنهاء الجولة؟</p>
+        <div style="display:flex;gap:12px;">
+          <button id="confirm-yes" class="btn btn-wrong btn-full">تأكيد</button>
+          <button id="confirm-no" class="btn btn-secondary btn-full">إلغاء</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ╔══════════════════════════════════════════════════╗ -->
+  <!-- ║  GLOBAL HOST MODE TOGGLE                         ║ -->
+  <!-- ╚══════════════════════════════════════════════════╝ -->
+  <button id="btn-host-mode" title="Toggle Host Mode"
+    style="position:fixed;bottom:20px;right:20px;width:56px;height:56px;border-radius:28px;background:var(--clr-primary);color:var(--bg-base);border:none;box-shadow:0 4px 16px rgba(0,0,0,0.6);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0.6;transition:all 0.3s ease;">
+    <span class="material-symbols-outlined" id="host-mode-icon" style="font-size:26px;">visibility_off</span>
+  </button>
+
+  </div><!-- #app -->
+
+  <!-- ─── Scripts ──────────────────────────────────────────── -->
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/screens.js"></script>
+  <script src="js/round1.js"></script>
+  <script src="js/round2.js"></script>
+  <script src="js/round3.js"></script>
+  <script>
+    // Bootstrap
+    (function () {
+      const savedTheme = localStorage.getItem('qool_theme') || 'dark';
+      Theme.apply(savedTheme);
+
+      const savedLang = localStorage.getItem('qool_lang') || 'ar';
+      i18n.setLang(savedLang);
+
+      // Patch lang toggle to save preference
+      const origToggle = i18n.toggleLang.bind(i18n);
+      i18n.toggleLang = function () {
+        origToggle();
+        localStorage.setItem('qool_lang', i18n.lang);
+      };
+
+      // Apply default team colors
+      applyTeamColors();
+
+      // Host Mode Logic
+      const hostBtn = document.getElementById('btn-host-mode');
+      const hostIcon = document.getElementById('host-mode-icon');
+      let isHostMode = localStorage.getItem('qool_host') !== 'false';
+      const applyHostMode = () => {
+        document.body.classList.toggle('host-mode-active', isHostMode);
+        if (hostBtn) hostBtn.style.opacity = isHostMode ? '1' : '0.6';
+        if (hostBtn) hostBtn.style.background = isHostMode ? 'var(--clr-correct)' : 'var(--clr-primary)';
+        if (hostIcon) hostIcon.textContent = isHostMode ? 'visibility' : 'visibility_off';
+      };
+      applyHostMode(); // default on
+
+      if (hostBtn) {
+        hostBtn.onclick = () => {
+          isHostMode = !isHostMode;
+          localStorage.setItem('qool_host', isHostMode);
+          applyHostMode();
+          showToast(isHostMode ? '👁️ Host Dashboard Active' : '📺 TV Display Mode', isHostMode ? 'correct' : 'warn');
+        };
+      }
+
+      // Track last local save so we can ignore Firebase echoes of our own actions
+      let _lastLocalSave = 0;
+
+      // Firebase real-time listener — only redirect for REMOTE changes (another device)
+      let _isFirstLoad = true;
+      FirebaseDB.initListener((dbState) => {
+        if (!dbState || typeof GameState === 'undefined' || !GameState.restore) return;
+        GameState.restore(dbState);
+        // Skip navigation on the very first load — let the app stay at home screen
+        // Only follow remote navigation after the page has been running
+        if (_isFirstLoad) { _isFirstLoad = false; return; }
+        // If we saved within the last 3 sec, this is our own echo — skip re-navigation
+        const isOwnEcho = (Date.now() - _lastLocalSave) < 3000;
+        if (!isOwnEcho) {
+          Router.current = dbState.currentScreen || 'home';
+          Router.go(Router.current);
+          const sc = dbState.currentScreen;
+          if (sc === 'home') initHome();
+          else if (sc === 'setup') initSetup();
+          else if (sc === 'round-intro') initRoundIntro(dbState.currentRound);
+          else if (sc === 'round1') renderRound1();
+          else if (sc === 'round2') renderRound2();
+          else if (sc === 'round3') renderRound3();
+          else if (sc === 'scoreboard') showScoreboard(dbState.currentRound);
+          else if (sc === 'final') showFinalResults();
+        }
+      });
+
+      // Auto-sync to Firebase on any significant interaction
+      document.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON' || e.target.closest('button') || e.target.closest('.category-tile')) {
+          _lastLocalSave = Date.now();
+          setTimeout(() => FirebaseDB.saveState(), 20);
+        }
+      });
+      document.addEventListener('change', (e) => {
+        if (e.target.tagName === 'INPUT') {
+          _lastLocalSave = Date.now();
+          FirebaseDB.saveState();
+        }
+      });
+
+
+      // Global Mute Toggles
+      document.querySelectorAll('.btn-mute').forEach(btn => {
+        btn.onclick = () => {
+          const isMuted = Audio.toggle();
+          const icon = isMuted ? 'volume_off' : 'volume_up';
+          document.querySelectorAll('.btn-mute').forEach(b => {
+            b.innerHTML = `<span class="material-symbols-outlined">${icon}</span>`;
+            b.style.color = isMuted ? 'var(--clr-wrong)' : 'inherit';
+          });
+          showToast(isMuted ? '🔇 تم كتم الصوت' : '🔊 تم تفعيل الصوت', isMuted ? 'warn' : 'correct');
+        };
+      });
+
+      initHome();
+    })();
+  </script>
+</body>
+
+</html>
