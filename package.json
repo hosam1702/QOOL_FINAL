@@ -1,0 +1,24 @@
+{
+  "name": "qool-final",
+  "version": "1.0.0",
+  "description": "QOOL Quiz Game - The ultimate competitive quiz game",
+  "main": "app/index.html",
+  "scripts": {
+    "dev": "serve app",
+    "build": "echo 'No build step required for static site'",
+    "test": "echo 'No tests configured'"
+  },
+  "keywords": [
+    "quiz",
+    "game",
+    "qool"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

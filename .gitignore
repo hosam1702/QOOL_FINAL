@@ -12,3 +12,6 @@ __pycache__/
 
 # Local data (if any)
 *.log
+
+# Node modules
+node_modules/
